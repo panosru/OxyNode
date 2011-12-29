@@ -2,6 +2,10 @@
 
 */
 function animate(selector, animation, settings_class) {
+	
+	//fallback on the default settings
+	if ('undefined' === typeof settings_class) settings_class = 'animated';
+	
 	//Set private variable
 	var $el = $(selector);
 	
@@ -51,7 +55,7 @@ function animate(selector, animation, settings_class) {
 		//execute the animation
 		$el.addClass(animation);
 		
-		//Set timeout to for garbage collector
+		//Set timeout for garbage collector
 		setTimeout(function () {
 			//Remove animation settings
 			$el.removeClass(settings_class);

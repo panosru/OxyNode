@@ -29,3 +29,8 @@ Please if you think that any of the project's file violate any license please le
 
 
 Documentation, examples and more features will come (I hope daily/weekly)
+
+Who should use it
+-----------------
+
+The purpose of this kit is to be used for web app's front-end development not for simple projects or websites because it could be too heavy for simple things, so if you believe that your project is too simple avoid this kit.

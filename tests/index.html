@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Test Suite</title>
+
+  <!-- Modernizr -->
+  <script src="../js/libs/modernizr-2.0.6.min.js"></script>
+
+  <!-- jquery -->
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+  
+  <!-- Custom scripts -->
+  <script src="../js/plugins.js"></script> 
+  <script src="../js/script.js"></script>
+
+  <!-- qunit -->
+  <link rel="stylesheet" href="vendor/qunit.css" type="text/css" media="screen" />
+  <script src="vendor/qunit.js"></script>
+
+
+
+  <!-- unit tests -->
+  <script type="text/javascript">
+  //<![CDATA[
+	Modernizr.load({
+		load: [
+			'unit/bootstrap-alerts.js',
+			'unit/bootstrap-dropdown.js',
+			'unit/bootstrap-modal.js',
+			'unit/bootstrap-popover.js',
+			'unit/bootstrap-tabs.js',
+			'unit/bootstrap-twipsy.js',
+			'unit/bootstrap-buttons.js'
+		]
+	});
+  //]]>
+  </script>
+
+<body>
+  <div>
+    <h1 id="qunit-header">Bootstrap Plugin Test Suite</h1>
+    <h2 id="qunit-banner"></h2>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-runoff"></div>
+  </div>
+</body>
+</html>

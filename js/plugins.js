@@ -22,7 +22,6 @@ Modernizr.load({
 			return true;
 		})(),
 	yep: 'js/libs/jQuery/plugins/chosen.jquery.js',
-	nope: '',
 	callback: function (url, result, key) {
 		if (result) {
 			$(document).ready(function () {
@@ -37,7 +36,6 @@ Modernizr.load({
 			return true;
 		})(),
 	yep: 'js/libs/jwerty.js',
-	nope: '',
 	callback: function (url, result, key) {
 		if (result) {
 			//Code here
@@ -51,7 +49,6 @@ Modernizr.load([
 				return true;
 			})(),
 		yep: 'js/libs/jQuery/plugins/bootstrap-modal.js',
-		nope: '',
 		callback: function (url, result, key) {
 			if (result) {
 				if (result) {
@@ -67,7 +64,6 @@ Modernizr.load([
 				return true;
 			})(),
 		yep: 'js/libs/bootbox.js',
-		nope: '',
 		callback: function (url, result, key) {
 			if (result) {
 				if (result) {
@@ -83,7 +79,6 @@ Modernizr.load({
 			return true;
 		})(),
 	yep: 'js/libs/jQuery/plugins/bootstrap-dropdown.js',
-	nope: '',
 	callback: function (url, result, key) {
 		if (result) {
 			//Code here
@@ -96,7 +91,6 @@ Modernizr.load({
 			return true;
 		})(),
 	yep: 'js/libs/jQuery/plugins/bootstrap-scrollspy.js',
-	nope: '',
 	callback: function (url, result, key) {
 		if (result) {
 			//Code here
@@ -109,7 +103,6 @@ Modernizr.load({
 			return true;
 		})(),
 	yep: 'js/libs/jQuery/plugins/bootstrap-buttons.js',
-	nope: '',
 	callback: function (url, result, key) {
 		if (result) {
 			//Code here
@@ -122,7 +115,6 @@ Modernizr.load({
 			return true;
 		})(),
 	yep: 'js/libs/jQuery/plugins/bootstrap-tabs.js',
-	nope: '',
 	callback: function (url, result, key) {
 		if (result) {
 			//Code here
@@ -136,7 +128,6 @@ Modernizr.load([
 				return true;
 			})(),
 		yep: 'js/libs/jQuery/plugins/bootstrap-twipsy.js',
-		nope: '',
 		callback: function (url, result, key) {
 			if (result) {
 				//Code here
@@ -150,7 +141,6 @@ Modernizr.load([
 				return true;
 			})(),
 		yep: 'js/libs/jQuery/plugins/bootstrap-popover.js',
-		nope: '',
 		callback: function (url, result, key) {
 			if (result) {
 				//Code here
@@ -164,7 +154,6 @@ Modernizr.load({
 			return true;
 		})(),
 	yep: 'js/libs/jQuery/plugins/bootstrap-alerts.js',
-	nope: '',
 	callback: function (url, result, key) {
 		if (result) {
 			//Code here
@@ -177,10 +166,30 @@ Modernizr.load({
 			return true;
 		})(),
 	yep: 'js/libs/Prettify/prettify.js',
-	nope: '',
 	callback: function (url, result, key) {
 		if (result) {
 			prettyPrint();
 		}
 	}
 });
+
+Modernizr.load([{
+	test: (function () {return 0 < $('table.tablesorter').length; })(),
+	yep: 'js/libs/jQuery/plugins/tablesorter.jquery.js',
+	callback: function (url, result, key) {
+		if (result) {
+			//Code here
+			Modernizr.load([{
+				load : 'js/libs/jQuery/plugins/tablesorter.pager.jquery.js',
+				complete : function() {
+					$('table.tablesorter')
+						.tablesorter()
+						.tablesorterPager({
+							container: $('table.tablesorter > tfoot.pager')
+						})
+					;
+				}
+			}]);
+		}
+	}
+}]);

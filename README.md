@@ -28,7 +28,13 @@ Lot's of things are on their way.
 Please if you think that any of the project's file violate any license please let me know if it does it's not on purpose and I will replace/remove or ask permission to use it.
 
 
-Documentation, examples and more features will come (I hope daily/weekly)
+What is planed
+--------------
+As I said, lot's of things are on their way some of those are documentation, examples and more features (I hope daily/weekly). 
+Currently I'm working on DDD implementation on the project with a different approach of Backbone.js models, the benefit is huge since DDD provides great way to scale your application and teams to work together.
+I'm thinking of applying CQRS too but I'm not sure about that currently, I mean if it is really needed in client-side.
+
+DDD is already implemented localy need's a bit of more testing and tuning and will be online I believe by tomorrow (without examples unfortunately, I chose to let examples in the end because once functionality is there examples are not too much trouble to do)
 
 Who should use it
 -----------------

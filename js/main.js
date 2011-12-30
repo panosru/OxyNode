@@ -10,7 +10,10 @@ require.config({
 		//Libs
 		'underscore': 'libs/Underscore/underscore-1.2.3',
 		'backbone'	: 'libs/Backbone/backbone-0.5.3',
-		'templates'	: '../templates'
+		
+		//Path mappings
+		'templates'	: '../templates',
+		'BC'		: 'bounded-contexts'
 	},
 	packages: [
 		{

@@ -2,20 +2,19 @@ define([
 	'underscore', 
 	'backbone', 
 	'router', 
-	'BC/Account/AppServices/Read/AccountService'
+	'BC/Account/AppServices/Write/AccountService'
 ]
 
 ,function (
 	_, 
 	Backbone, 
 	Router, 
-	AccountReadService
+	AccountWriteService
 ) {	
   	return {
     	initialize: function(){
     		
     		//person = PersonModel;
-    		ars = AccountReadService;
     		
 	    	// Pass in our Router module and call it's initialize function
 	    	Router.initialize();

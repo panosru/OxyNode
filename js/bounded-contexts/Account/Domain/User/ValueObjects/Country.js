@@ -5,26 +5,16 @@ define([
 function(
 	
 ) {
-	var CountryValueObject = function (code, title) {
-		
-		//Validate
-		
-		//Set
-		this.code = code;
-		this.title = title;
-		
-		if (!CountryValueObject._prototyped) {
-			CountryValueObject.prototype.getCode = function() {
-				return this.code;
-			};
+	//Set ValueObject
+	function CountryValueObject (code, title) {
+				
+		this.getCode = function() {
+			return code;
+		};
 			
-			CountryValueObject.prototype.getTitle = function() {
-				return this.title;
-			};
-
-			CountryValueObject._prototyped = true;
-		}
-		
+		this.getTitle = function() {
+			return title;
+		};		
 	}
 	
 	return CountryValueObject;

@@ -5,26 +5,15 @@ define([
 function(
 	
 ) {
-	var LanguageValueObject = function (code, title) {
+	function LanguageValueObject (code, title) {
 		
-		//Validate
-		
-		//Set
-		this.code = code;
-		this.title = title;
-		
-		if (!LanguageValueObject._prototyped) {
-			LanguageValueObject.prototype.getCode = function() {
-				return this.code;
-			};
+		this.getCode = function() {
+			return code;
+		};
 			
-			LanguageValueObject.prototype.getTitle = function() {
-				return this.title;
-			};
-
-			LanguageValueObject._prototyped = true;
-		}
-		
+		this.getTitle = function() {
+			return title;
+		};
 	}
 	
 	return LanguageValueObject;

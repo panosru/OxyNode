@@ -5,21 +5,11 @@ define([
 function(
 	
 ) {
-	var EmailAddressValueObject = function (emailAddress) {
+	function EmailAddressValueObject (EmailAddress) {
 		
-		//Validate
-		
-		//Set
-		this.EmailAddress = emailAddress;
-		
-		if (!EmailAddressValueObject._prototyped) {
-			EmailAddressValueObject.prototype.getEmail = function() {
-				return this.EmailAddress;
-			};
-
-			EmailAddressValueObject._prototyped = true;
-		}
-		
+		this.getEmail = function() {
+			return EmailAddress;
+		};
 	}
 	
 	return EmailAddressValueObject;

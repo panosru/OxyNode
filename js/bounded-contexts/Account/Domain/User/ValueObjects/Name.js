@@ -5,20 +5,13 @@ define([
 function(
 	
 ) {
-	var NameValueObject = function (name) {
+	function NameValueObject (name) {
 		
-		//Validate
+		var name = ('undefined' === typeof name) ? 'unknown' : name;
 		
-		//Set
-		this.name = ('undefined' === typeof name) ? 'unknown' : name;
-		
-		if (!NameValueObject._prototyped) {
-			NameValueObject.prototype.getName = function() {
-				return this.name;
-			};
-
-			NameValueObject._prototyped = true;
-		}
+		this.getName = function() {
+			return name;
+		};
 	}
 	
 	return NameValueObject;

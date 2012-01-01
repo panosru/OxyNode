@@ -24,13 +24,6 @@ function (
 ) {
 	
 	var UserAggregateRoot = Backbone.Model.extend({
-		//Set defaults
-		defaults : {
-			EmailAddress 	: null,
-			Name 			: null,
-			Country 		: null,
-			Language 		: null
-		},
 		
 		initialize : function (params) {
 			new DoSetupAccountCommand(this, params);

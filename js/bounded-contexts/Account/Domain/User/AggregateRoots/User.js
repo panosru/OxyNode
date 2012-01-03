@@ -10,7 +10,10 @@ define([
 	'BC/Account/Domain/User/ValueObjects/Language',
 	
 	//Get Commands
-	'BC/Account/Domain/User/Commands/DoSetupAccount'
+	'BC/Account/Domain/User/Commands/DoSetupAccount',
+	
+	//Get User Events
+	'BC/Account/Domain/User/AggregateRoots/User/Event/NameChanged'
 ],
 
 function (
@@ -20,13 +23,26 @@ function (
 	NameValueObject,
 	CountryValueObject,
 	LanguageValueObject,
-	DoSetupAccountCommand
+	DoSetupAccountCommand,
+	NameChangedAggregateRootEvent
 ) {
 	
 	var UserAggregateRoot = Backbone.Model.extend({
 		
 		initialize : function (params) {
-			new DoSetupAccountCommand(this, params);
+			//Convert object properties to ValueObjects
+			this.id = params.id;
+			this.setUserEmailAddress(params.EmailAddress);
+			this.setUserName(params.Name);
+			this.setUserCountry(params.CountryCode, params.CountryTitle);
+			this.setUserLanguage(params.LanguageCode, params.LanguageTitle);
+			
+			
+			//Trigger DoSetupAccount Command Handler
+			//new DoSetupAccountCommandHandler(User);
+			
+			//Bind Events
+			this.bind('change:Name', NameChangedAggregateRootEvent);
 		},
 		
 		setUserEmailAddress : function (email) {

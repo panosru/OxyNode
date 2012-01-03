@@ -1,35 +1,44 @@
-define([ 'underscore', 'backbone' ],
+define([ 
+	'underscore', 
+	'backbone',
+	
+	//Get application services
+	'BC/Account/AppServices/Write/AccountService' 
+],
 
-function(_, Backbone) {
-  var AppRouter = 	Backbone.Router.extend({
+function(
+	_, 
+	Backbone,
+	AccountWriteService
+) {
+	//Create base router
+	var RouterObject = {
+		routes : {}
+	};
+	
+	//Merge base router with application services without override defaults
+	
+	//Merge routes
+	_.defaults(RouterObject.routes,
+		AccountWriteService.routes
+	);
+	
+	//Merge actions
+	_.defaults(RouterObject,
+		AccountWriteService
+	);
+	
+	var AppRouter = Backbone.Router.extend(RouterObject);
+	
+	function initialize() {
+		//Initiate router object
+    	new AppRouter;
+    	
+    	//Start history
+    	Backbone.history.start();
+  	};
 
-	  routes: {
-	    "help":                 "help",    // #help
-	    "search/:query":        "search",  // #search/kiwis
-	    "search/:query/p:page": "search",   // #search/kiwis/p7
-		'do/*action': 			'actions'
-	  },
-
-	actions: function (acts) {
-		log(acts);
-	},
-
-	  help: function() {
-	    log('help!');
-	  },
-
-	  search: function(query, page) {
-	    log('search: '+query+' In page: '+page);
-	  }
-
-	});
-
-  var initialize = function(){
-    var app_router = new AppRouter;
-    Backbone.history.start();
-  };
-
-  return {
-    initialize: initialize
-  };
+  	return {
+    	initialize: initialize
+  	};
 });

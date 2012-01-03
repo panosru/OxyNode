@@ -1,30 +1,41 @@
 define([
-	//Get Command Handler
-	'BC/Account/Domain/User/Commands/Handlers/DoSetupAccount',
+	'underscore',
 	
-	//Get User Events
-	'BC/Account/Domain/User/AggregateRoots/User/Event/NameChanged'
+	//Load User Aggregate Root (Model Object)
+	'BC/Account/Domain/User/AggregateRoots/User',
+	
+	//Get Command Handler
+	'BC/Account/Domain/User/Commands/Handlers/DoSetupAccount'
 ],
 
 function (
-	DoSetupAccountCommandHandler,
-	NameChangedAggregateRootEvent
+	_,
+	UserAggregateRoot,
+	DoSetupAccountCommandHandler
 ) {
-	var DoSetupAccountCommand = function (User, Params) {
+	function DoSetupAccountCommand(
+		repository,
+		realIdentifier,
+		name
+	) {
+		//Check if Repository exist
+		if (App.hasRepository(repository)) {
+			
+			var newUser = new UserAggregateRoot({
+				id 		: realIdentifier,
+				name 	: name
+			});
+			
+			
+			log(newUser);
+			log('Create user: ' + newUser.get('name'));
 		
-		//Convert object properties to ValueObjects
-		User.setUserEmailAddress(Params.EmailAddress);
-		User.setUserName(Params.Name);
-		User.setUserCountry(Params.CountryCode, Params.CountryTitle);
-		User.setUserLanguage(Params.LanguageCode, Params.LanguageTitle);
-		
-		
-		//Trigger DoSetupAccount Command Handler
-		new DoSetupAccountCommandHandler(User);
-		
-		//Bind Events
-		User.bind('change:Name', NameChangedAggregateRootEvent);
-	};
+			//Trigger handlers
+			//DoSetupAccountCommandHandler();
+		} else {
+			//Trigger some error type event
+		}
+	}
 	
 	return DoSetupAccountCommand;
 });

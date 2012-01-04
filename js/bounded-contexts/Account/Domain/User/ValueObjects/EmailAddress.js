@@ -12,5 +12,9 @@ function(
 		};
 	}
 	
+	EmailAddressValueObject.prototype.toJSON = function () {
+		return this.getEmail();
+	};
+	
 	return EmailAddressValueObject;
 });

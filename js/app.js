@@ -1,12 +1,25 @@
-define([ 
+define([
+	'underscore',
+	'backbone',
 	'router',
 	'repository'
 ]
 
 ,function (
+	_,
+	Backbone,
 	Router,
 	Repository
 ) {
+	//Override some Backbone methods
+	
+	//Override Backbone.Model.prototype.toJSON in order to get values from ValueObjects
+	Backbone.Model.prototype.toJSON = function() {
+		var tmpObj = _.clone(this.attributes);
+		_.each(tmpObj, function (value, key) { eval('tmpObj.'+key+' = value.toJSON();') });
+		return tmpObj;
+    }; 
+	
 	/**
 	 * @constructor
 	 * @this {Application}

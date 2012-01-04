@@ -14,5 +14,9 @@ function(
 		};
 	}
 	
+	NameValueObject.prototype.toJSON = function () {
+		return this.getName();
+	};
+	
 	return NameValueObject;
 });

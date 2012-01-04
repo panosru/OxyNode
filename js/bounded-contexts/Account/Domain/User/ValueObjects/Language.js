@@ -16,5 +16,12 @@ function(
 		};
 	}
 	
+	LanguageValueObject.prototype.toJSON = function () {
+		return {
+			code : this.getCode(),
+			title : this.getTitle()
+		};
+	};
+	
 	return LanguageValueObject;
 });

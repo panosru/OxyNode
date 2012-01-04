@@ -17,5 +17,12 @@ function(
 		};		
 	}
 	
+	CountryValueObject.prototype.toJSON = function () {
+		return {
+			code : this.getCode(),
+			title : this.getTitle()
+		};
+	};
+	
 	return CountryValueObject;
 });

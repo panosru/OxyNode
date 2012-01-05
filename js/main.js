@@ -12,7 +12,8 @@ require.config({
 		'backbone'	: 'libs/Backbone/backbone-0.5.3',
 		
 		//Path mappings
-		'BC'		: 'bounded-contexts'
+		'BC'		: 'bounded-contexts',
+		'IF'		: '../interface',
 	},
 	packages: [
 		{

@@ -1,40 +1,79 @@
 define([
-	'underscore',
-	
-	//Load User Aggregate Root (Model Object)
-	'BC/Account/Domain/User/AggregateRoots/User',
-	
 	//Get Command Handler
 	'BC/Account/Domain/User/Commands/Handlers/DoSetupAccount'
 ],
 
 function (
-	_,
-	UserAggregateRoot,
 	DoSetupAccountCommandHandler
-) {
+) {	
+	/**
+	 * @constructor
+	 * 
+	 * @param {String} repository
+	 * @param {String|Number} realIdentifier
+	 * @param {String} email
+	 * @param {String} countryCode
+	 * @param {String} countryTitle
+	 * @param {String} languageCode
+	 * @param {String} languageTitle
+	 */
 	function DoSetupAccountCommand(
-		repository,
-		realIdentifier,
-		name
+		name,
+		email,
+		countryCode,
+		countryTitle,
+		languageCode,
+		languageTitle
 	) {
-		//Check if Repository exist
-		if (App.hasRepository(repository)) {
-			
-			var newUser = new UserAggregateRoot({
-				id 		: realIdentifier,
-				name 	: name
-			});
-			
-			
-			log(newUser);
-			log('Create user: ' + newUser.get('name'));
+		//Create public Get methods
+		/**
+		 * @return {String}
+		 */
+		this.getName 			= function() {
+			return name;
+		};
 		
-			//Trigger handlers
-			//DoSetupAccountCommandHandler();
-		} else {
-			//Trigger some error type event
-		}
+		/**
+		 * @return {String}
+		 */
+		this.getEmailAddress 	= function() {
+			return email;
+		};
+		
+		/**
+		 * @return {String}
+		 */
+		this.getCountryCode		= function () {
+			return countryCode;
+		};
+		
+		/**
+		 * @return {String}
+		 */
+		this.getCountryTitle	= function () {
+			return countryTitle;
+		};
+		
+		/**
+		 * @return {String}
+		 */
+		this.getLanguageCode 	= function() {
+			return languageCode;
+		};
+		
+		/**
+		 * @return {String}
+		 */
+		this.getLanguageTitle 	= function() {
+			return languageTitle;
+		};
+		
+		//Trigger Command Handler
+		new DoSetupAccountCommandHandler(
+			'AccountUserRepository',
+			null,
+			this
+		);
 	}
 	
 	return DoSetupAccountCommand;

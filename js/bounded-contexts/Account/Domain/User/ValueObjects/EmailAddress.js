@@ -7,13 +7,13 @@ function(
 ) {
 	function EmailAddressValueObject (EmailAddress) {
 		
-		this.getEmail = function() {
+		this.getEmailAddress = function() {
 			return EmailAddress;
 		};
 	}
 	
 	EmailAddressValueObject.prototype.toJSON = function () {
-		return this.getEmail();
+		return this.getEmailAddress();
 	};
 	
 	return EmailAddressValueObject;

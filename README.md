@@ -44,7 +44,7 @@ This project uses:
 
 * [HTML5 Boilerplate](http://html5boilerplate.com/)
 * Twitter Bootstrap [CSS](http://twitter.github.com/bootstrap/) & [JavaScript](http://twitter.github.com/bootstrap/javascript.html) 
-(Thanks to mklabs who provided [a nice script](https://gist.github.com/1422879) to use html5boilerplate with twitter bootstrap!)
+(Thanks to [mklabs](https://github.com/mklabs) who provided [a nice script](https://gist.github.com/1422879) to use html5boilerplate with twitter bootstrap!)
 * [Modernizr](http://www.modernizr.com/) (full featured)
 * [Yepnope.js](http://yepnopejs.com/) included with Modernizr
 * [Pretify](http://google-code-prettify.googlecode.com/svn/trunk/README.html) lib (code highlighting)

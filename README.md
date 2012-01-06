@@ -1,7 +1,33 @@
-Web Application's Starter Kit
+OxyFront
 =============================
 
-The purpose of this kit is to easily start building front-end parts of web applications.
+OxyFront is a collection of libraries and theories in order to help developers to structure their web applications in 
+front-end level. OxyFront uses **Domain-driven Design (DDD)** approach, **Command-query Responsibility Segregation (CQRS)**
+architecture which follows **Command and Query Separation (CQS)** design pattern and **Event Sourcing (ES)** architectural 
+pattern. I build a diagram that show the [application flow](http://dl.dropbox.com/u/16165490/js-ddd-cqrs2.png) in client-side with the use of OxyFront.
+The project is inspired by [OxyBase](http://code.google.com/p/oxybase/) where I contribute and it is created by Tomas Bartkus.
+  
+The purpose of this framework is to easily start building front-end parts of web applications.
+
+
+When you should use OxyFront
+----------------------------
+
+* If you have complex domain (very complex business rules)
+* If you have at least 1 experienced developer in your team
+* If you have experience if advanced JavaScript OOP patterns
+* If you know what is DDD
+
+When you should not use OxyFront
+--------------------------------
+
+You can use it for any kind of project, but more likely that you will not benefit from packages and features it provides. 
+Although, if you will try to implement some small, not complex application by using all those "things" described above - 
+most likely that you will fail, because it will be just to much work and very little benefit. [why to avoid cqrs](http://www.udidahan.com/2011/04/22/when-to-avoid-cqrs/ "When to avoid CQRS") read this 
+before you start redesigning anything.
+
+OxyFront's Extras!
+------------------
 
 This project uses:
 
@@ -25,17 +51,15 @@ This project uses:
 
 Lot's of things are on their way.
 
-Please if you think that any of the project's file violate any license please let me know if it does it's not on purpose and I will replace/remove or ask permission to use it.
+*Please if you think that any of the project's file violate any license please let me know if it does it's not on purpose 
+and I will replace/remove or ask permission to use it.*
 
 
-What is planed
---------------
-As I said, lot's of things are on their way some of those are documentation, examples and more features (I hope daily/weekly). 
-Currently I'm working on DDD & CQRS implementation on the project with a different approach of Backbone.js models, the benefit is huge since DDD & CQRS provides great way to scale your application and teams to work together.
 
-DDD and CQRS is almost implemented localy need's a bit of more testing and tuning and will be online soon (without examples unfortunately, I chose to let examples in the end because once functionality is there examples are not too much trouble to do)
-
-Who should use it
------------------
-
-The purpose of this kit is to be used for web app's front-end development not for simple projects or websites because it could be too heavy for simple things, so if you believe that your project is too simple avoid this kit.
+Next!
+====
+* Examples need to be added in order to represent the flow of DDD/CQRS and how can be interacted with UI
+* js/app.js uses eval in some parts, unfortunately I can't avoid it but I believe it is safe in the way I use it but I 
+will listen any alternatives ! :)
+* I revisit the code daily so things could be changed on how they work (flow may be changed to if I find that something 
+could work in a better way)

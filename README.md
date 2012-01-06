@@ -52,7 +52,6 @@ This project uses:
 Lot's of things are on their way.
 
 *Please if you think that any of the project's file violate any license please let me know if it does it's not on purpose 
-<<<<<<< HEAD
 and I will replace/remove or ask permission to use it.*
 
 
@@ -64,6 +63,3 @@ Next!
 will listen any alternatives ! :)
 * I revisit the code daily so things could be changed on how they work (flow may be changed to if I find that something 
 could work in a better way)
-=======
-and I will replace/remove or ask permission to use it.*
->>>>>>> 6a2563ba51cc24eba0f5f4098b4255a4644165e9

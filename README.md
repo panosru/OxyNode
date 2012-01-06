@@ -9,6 +9,17 @@ The project is inspired by [OxyBase](http://code.google.com/p/oxybase/) where I 
   
 The purpose of this framework is to easily start building front-end parts of web applications.
 
+Resources for DDD/CQRS/ES:
+
+* [Domain Driven Design - Step by Step](http://thinkddd.com/assets/2/Domain_Driven_Design_-_Step_by_Step.pdf)
+* [DDD Sample & Definitions](http://dddsample.sourceforge.net/patterns-reference.html)
+* [Domain Event](http://martinfowler.com/eaaDev/DomainEvent.html)
+* **[Architectural Innovation: Eventing, Event Sourcing by Greg Young](http://skillsmatter.com/podcast/design-architecture/architectural-innovation-eventing-event-sourcing/zx-553)** *1hour video*
+* [CQRS and Event Sourcing - the Business Perspective by Greg Young](http://skillsmatter.com/podcast/design-architecture/greg-young-cqrs-event-sourcing-the-business-perspective) *2hour video*
+* [Domain Driven Design and Development In Practice](http://www.infoq.com/articles/ddd-in-practice)
+* [Domain-driven design (Wikipedia)](http://en.wikipedia.org/wiki/Domain-driven_design)
+
+
 
 When you should use OxyFront
 ----------------------------
@@ -31,25 +42,27 @@ OxyFront's Extras!
 
 This project uses:
 
-* HTML5 Boilerplate
-* Twitter Bootstrap CSS & JavaScript
-* Modernizr (full featured)
-* Pretify lib (code highlighting)
-* Chosen select boxes lib
-* Jwerty for easy keyboard handling
-* Bootbox for nice alert and confirm type boxes
-* jQuery
-* Backbone.js
-* Underscore.js
-* JSON2.js
-* Require.js to apply JavaScript AMD (Asynchronous Module Definition)
-* QUnit for testings
-* LESS Css files with less Node.js module for compiling
-* Money.js as Node.js module
-* Moment.js as Node.js module
-
-
-Lot's of things are on their way.
+* [HTML5 Boilerplate](http://html5boilerplate.com/)
+* Twitter Bootstrap [CSS](http://twitter.github.com/bootstrap/) & [JavaScript](http://twitter.github.com/bootstrap/javascript.html) 
+(Thanks to mklabs who provided [a nice script](https://gist.github.com/1422879) to use html5boilerplate with twitter bootstrap!)
+* [Modernizr](http://www.modernizr.com/) (full featured)
+* [Yepnope.js](http://yepnopejs.com/) included with Modernizr
+* [Pretify](http://google-code-prettify.googlecode.com/svn/trunk/README.html) lib (code highlighting)
+* [Chosen](http://harvesthq.github.com/chosen/) select boxes lib
+* [Jwerty](http://keithcirkel.co.uk/jwerty/) for easy keyboard handling
+* [Bootbox](http://paynedigital.com/2011/11/bootbox-js-alert-confirm-dialogs-for-twitter-bootstrap) for nice alert and confirm type boxes
+* [jQuery](http://jquery.com/)
+* [Backbone.js](http://documentcloud.github.com/backbone/) - [Backbone Tutorials](http://backbonetutorials.com/) helped a lot to start up with Backbone.js!
+* [Underscore.js](http://documentcloud.github.com/underscore/)
+* [JSON2.js](https://github.com/douglascrockford/JSON-js)
+* [Require.js](http://requirejs.org/) to apply [JavaScript AMD (Asynchronous Module Definition)](https://github.com/amdjs/amdjs-api/wiki/AMD)
+* [QUnit](http://docs.jquery.com/QUnit) for testings
+* [LESS](http://lesscss.org/) Css files with less Node.js module for compiling
+* [Money.js](http://josscrowcroft.github.com/money.js/) as Node.js module
+* [Moment.js](http://momentjs.com/) as Node.js module
+* [Animate.css](http://daneden.me/animate/)
+* [Table sorter](http://tablesorter.com/docs/) for easy table shoring & pagination
+* [Silex](http://silex.sensiolabs.org/doc/usage.html) PHP micro-framework based on Symfony 2 (I added this for purpose of examples when interacting with back-end)
 
 *Please if you think that any of the project's file violate any license please let me know if it does it's not on purpose 
 and I will replace/remove or ask permission to use it.*
@@ -63,3 +76,12 @@ Next!
 will listen any alternatives ! :)
 * I revisit the code daily so things could be changed on how they work (flow may be changed to if I find that something 
 could work in a better way)
+* A/B Testing script to make A/B Testing easy to use!
+* A growl like notification lib
+* Plupload of course... best upload way in my opinion
+* Form user-input auto saver (so if browser crash or something happens the use won't have to re-type again everything he may lost)
+* Mustache.js as an extra option for templating :) you could use mustache.js or underscore.js or both! 
+* some node.js modules I belive could be useful to have in RIA app
+* Icons! lots of them!
+
+Lot's of more things are on their way!

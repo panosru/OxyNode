@@ -5,10 +5,10 @@ define([
 function(
 	
 ) {
-	function EmailAddressValueObject (EmailAddress) {
+	function EmailAddressValueObject (param) {
 		
 		this.getEmailAddress = function() {
-			return EmailAddress;
+			return param;
 		};
 	}
 	

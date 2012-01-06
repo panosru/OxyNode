@@ -12,13 +12,13 @@ function (
 ) {
 	
 	var UserAggregateRoot = Backbone.Model.extend({
-		url : '/api/user',
-		initialize : function () {
-			//Trigger events
-			new NewAccountCreatedEvent(this);
-			
+		initialize : function () {			
 			//Bind Events
 			//this.bind('change:Name', NameChangedAggregateRootEvent);
+		},
+		triggerEvents : function () {
+			//Trigger events
+			new NewAccountCreatedEvent(this);
 		}
 	});
 	

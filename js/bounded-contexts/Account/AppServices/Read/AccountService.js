@@ -1,18 +1,28 @@
 define([
-	'BC/Account/Domain/User/AggregateRoots/User'
+	'BC/Account/Domain/User/Query/AccountInformation'
 ],
 	
 function (
-	UserAggregateRoot
+	AccountInformationDto
 ) {
-	
-	usr = UserAggregateRoot;
-	
 	return {
-		getAccount : function (email) {
-			var account = {};
+		routes : {
+			'user/get/:id'	: 'getAccount'
+		},
+		
+		getAccount : function (id) {
+			var information = new AccountInformationDto();
 			
-			return account;
+			information.getDto({
+				id : id,
+				success : function (model) {
+					log(model.get('name').getName());
+				},
+				error : function (e) {
+					//Error action
+					log(e);
+				}
+			});
 		}
 	}
 });

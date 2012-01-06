@@ -6,14 +6,14 @@ function(
 	
 ) {
 	//Set ValueObject
-	function CountryValueObject (code, title) {
+	function CountryValueObject (param) {
 				
 		this.getCode = function() {
-			return code;
+			return param.code;
 		};
 			
 		this.getTitle = function() {
-			return title;
+			return param.title;
 		};		
 	}
 	

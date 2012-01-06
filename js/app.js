@@ -11,14 +11,107 @@ define([
 	Router,
 	Repository
 ) {
-	//Override some Backbone methods
+	//Add some extra methods to string prototype
+
+	//Underscore to cammel case, for example: 'foo_bar' => FooBar
+	String.prototype.underscoreToCamelCase = function() {
+		return this
+			.trim()
+			.replace(/(\_[a-z])/g, function($1){return $1.toUpperCase().replace('_','');})
+			.replace(/^[a-z]/, function ($1) {return $1.toUpperCase()})
+		;
+	};
+	
+	//Dash to cammel case, for example: 'foo-bar' => FooBar
+	String.prototype.dashToCamelCase = function() {
+		return this
+			.trim()
+			.replace(/(\-[a-z])/g, function($1){return $1.toUpperCase().replace('-','');})
+			.replace(/^[a-z]/, function ($1) {return $1.toUpperCase()})
+		;
+	};
+	
+	//Cammel case to underscore, for example: 'FooBar' => foo_bar
+	String.prototype.camelCaseToUnderscore = function () {
+		return this
+			.trim()
+			.replace(/([A-Z])/g, function($1){return "_"+$1.toLowerCase();})
+			.substr(1)
+		;
+	}
+	
+	//Cammel case to dash, for example: 'FooBar' => foo-bar
+	String.prototype.camelCaseToDash = function () {
+		return this
+			.trim()
+			.replace(/([A-Z])/g, function($1){return "-"+$1.toLowerCase();})
+			.substr(1)
+		;
+	}
+	
+	//Override some Backbone methods	
 	
 	//Override Backbone.Model.prototype.toJSON in order to get values from ValueObjects
 	Backbone.Model.prototype.toJSON = function() {
 		var tmpObj = _.clone(this.attributes);
-		_.each(tmpObj, function (value, key) { eval('tmpObj.'+key+' = value.toJSON();') });
+		_.each(tmpObj, function (value, key) { 
+			//Skip certain keys
+			if (!_.any(['id'], function (val) {
+			    return val === key;
+			})) {
+				//Check if value is Value object
+				if ((key.underscoreToCamelCase() + 'ValueObject') === (/function (.{1,})\(/.exec(value.constructor.toString())[1])) {
+					eval('tmpObj.'+key+' = value.toJSON();');
+				} else {
+					log (key + ' is not a value object');
+				}
+			}
+		});
 		return tmpObj;
-    }; 
+    };
+
+	//Extend Backbone.Model with getFromServer method which fetch data from server and convert propertis to ValueObjects
+	Backbone.Model.prototype.getFromServer = function (options, callback) {
+		this.fetch({
+			success : function (model, resp) {
+				_.each(resp, function (value, key) {
+					//Skip certain keys
+					if (!_.any(['id'], function (val) {
+					    return val === key;
+					})) {
+						//Get value object
+						var ValueObject = require('BC/' + options.BC + '/Domain/' + options.Domain + '/ValueObjects/' + key.underscoreToCamelCase());
+						//Update model in repository
+						eval('App.getRepository("' + options.repository + '").get(' + options.modelID + ').set({ ' + key + ' : new ValueObject(value) });');
+					}
+				});
+				
+				callback(eval('App.getRepository("' + options.repository + '").get(' + options.modelID + ')'));
+			}
+		});
+	}
+	
+	//Extend Backbone.Collection with getFromServer method which fetch data from server and convert propertis to ValueObjects
+	Backbone.Collection.prototype.getFromServer = function (options, callback) {
+		var current_collection = this;
+		current_collection.fetch({
+			success : function (collection, resp) {
+				_.each(resp, function (model) {
+					_.each(model, function (value, key) {
+						//Skip certain keys
+						if (!_.any(['id'], function (val) {
+						    return val === key;
+						})) {
+							//Get value object
+							var ValueObject = require('BC/' + current_collection.BC + '/Domain/' + current_collection.DOMAIN + '/ValueObjects/' + key.underscoreToCamelCase());
+							//Update model in repository
+							eval('App.getRepository("' + current_collection.NAME + '").get(' + model.id + ').set({ ' + key + ' : new ValueObject(value) });');
+						}
+					});
+				});
+			}
+		});
+	}
 	
 	/**
 	 * @constructor
@@ -57,7 +150,7 @@ define([
 		this.getRepository = function (repository) {
 			if ('string' === typeof repository) {
 				return _.values(this.repositories)[_.indexOf(_.keys(this.repositories), repository)];
-			} else throw 'Only string is allowed to be passed, type of "' + typeof repository + '" given!';
+			} else throw new Error('Only string is allowed to be passed, type of "' + typeof repository + '" given!');
 		};
 		
 		/**
@@ -86,7 +179,7 @@ define([
 					return false;
 				}
 				
-			} else throw 'Repository "' + repository + '" does not exist!';
+			} else throw new Error('Repository "' + repository + '" does not exist!');
 		};
 		
 		/**
@@ -110,7 +203,7 @@ define([
 				
 				return Model;
 				
-			} else throw 'Model "' + realIdentifier + '" does not exist in "' + repository + '" Repository!';
+			} else throw new Error('Model with ID : "' + realIdentifier + '" does not exist in "' + repository + '" Repository!');
 		};
 	}
 	

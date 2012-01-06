@@ -5,9 +5,9 @@ define([
 function(
 	
 ) {
-	function NameValueObject (name) {
+	function NameValueObject (param) {
 		
-		var name = ('undefined' === typeof name) ? 'unknown' : name;
+		var name = ('undefined' === typeof param) ? 'unknown' : param;
 		
 		this.getName = function() {
 			return name;

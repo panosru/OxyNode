@@ -5,14 +5,14 @@ define([
 function(
 	
 ) {
-	function LanguageValueObject (code, title) {
+	function LanguageValueObject (param) {
 		
 		this.getCode = function() {
-			return code;
+			return param.code;
 		};
 			
 		this.getTitle = function() {
-			return title;
+			return param.title;
 		};
 	}
 	

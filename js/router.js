@@ -2,13 +2,17 @@ define([
 	'underscore', 
 	'backbone',
 	
-	//Get application services
+	//Get application read services
+	'BC/Account/AppServices/Read/AccountService',
+		
+	//Get application write services
 	'BC/Account/AppServices/Write/AccountService' 
 ],
 
 function(
 	_, 
 	Backbone,
+	AccountReadService,
 	AccountWriteService
 ) {
 	//Create base router
@@ -20,11 +24,13 @@ function(
 	
 	//Merge routes
 	_.defaults(RouterObject.routes,
+		AccountReadService.routes,
 		AccountWriteService.routes
 	);
 	
 	//Merge actions
 	_.defaults(RouterObject,
+		AccountReadService,
 		AccountWriteService
 	);
 	

@@ -26,17 +26,21 @@ function (
 			try {
 				//Create user model
 				var user = new UserAggregateRoot({
-					name 		: new NameValueObject(command.getName()),
-					email 		: new EmailAddressValueObject(command.getEmailAddress()),
-					country 	: new CountryValueObject(command.getCountryCode(), command.getCountryTitle()),
-					language 	: new LanguageValueObject(command.getLanguageCode(), command.getLanguageTitle())
+					id				: 24,
+					name 			: new NameValueObject(command.getName()),
+					email_address 	: new EmailAddressValueObject(command.getEmailAddress()),
+					country 		: new CountryValueObject({ code : command.getCountryCode(), title : command.getCountryTitle()}),
+					language 		: new LanguageValueObject({ code : command.getLanguageCode(), title : command.getLanguageTitle()})
 				});
-				
+
 				//Store User to repository
 				App.getRepository(repository).add(user);
 				
+				//Trigger events
+				user.triggerEvents();
+				
 				//Save to server
-				user.save();
+				//user.save();
 			} catch (e) {
 				//Trigger some error type event
 				log(e);

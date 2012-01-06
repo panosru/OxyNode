@@ -31,10 +31,9 @@ Please if you think that any of the project's file violate any license please le
 What is planed
 --------------
 As I said, lot's of things are on their way some of those are documentation, examples and more features (I hope daily/weekly). 
-Currently I'm working on DDD implementation on the project with a different approach of Backbone.js models, the benefit is huge since DDD provides great way to scale your application and teams to work together.
-I'm thinking of applying CQRS too but I'm not sure about that currently, I mean if it is really needed in client-side.
+Currently I'm working on DDD & CQRS implementation on the project with a different approach of Backbone.js models, the benefit is huge since DDD & CQRS provides great way to scale your application and teams to work together.
 
-DDD is already implemented localy need's a bit of more testing and tuning and will be online I believe by tomorrow (without examples unfortunately, I chose to let examples in the end because once functionality is there examples are not too much trouble to do)
+DDD and CQRS is almost implemented localy need's a bit of more testing and tuning and will be online soon (without examples unfortunately, I chose to let examples in the end because once functionality is there examples are not too much trouble to do)
 
 Who should use it
 -----------------

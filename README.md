@@ -28,7 +28,7 @@ When you should use OxyFront
 
 * If you have complex domain (very complex business rules)
 * If you have at least 1 experienced developer in your team
-* If you have experience if advanced JavaScript OOP patterns
+* If you have experience in advanced JavaScript OOP patterns
 * If you know what is DDD
 
 When you should not use OxyFront
@@ -36,7 +36,7 @@ When you should not use OxyFront
 
 You can use it for any kind of project, but more likely that you will not benefit from packages and features it provides. 
 Although, if you will try to implement some small, not complex application by using all those "things" described above - 
-most likely that you will fail, because it will be just to much work and very little benefit. [why to avoid cqrs](http://www.udidahan.com/2011/04/22/when-to-avoid-cqrs/ "When to avoid CQRS") read this 
+most likely that you will fail, because it will be just too much work and very little benefit. [why to avoid cqrs](http://www.udidahan.com/2011/04/22/when-to-avoid-cqrs/ "When to avoid CQRS") read this 
 before you start redesigning anything.
 
 OxyFront's Extras!
@@ -76,12 +76,12 @@ Next!
 * Examples need to be added in order to represent the flow of DDD/CQRS and how can be interacted with UI
 * js/app.js uses eval in some parts, unfortunately I can't avoid it but I believe it is safe in the way I use it but I 
 will listen any alternatives ! :)
-* I revisit the code daily so things could be changed on how they work (flow may be changed to if I find that something 
+* I revisit the code daily so things could be changed on how they work (flow may be changed too if I find that something 
 could work in a better way)
 * A/B Testing script to make A/B Testing easy to use!
 * A growl like notification lib
 * Plupload of course... best upload way in my opinion
-* Form user-input auto saver (so if browser crash or something happens the use won't have to re-type again everything he may lost)
+* Form user-input auto saver (so if browser crash or something happens the user won't have to re-type again everything he may lost)
 * Mustache.js as an extra option for templating :) you could use mustache.js or underscore.js or both! 
 * some node.js modules I belive could be useful to have in RIA app
 * Icons! lots of them!

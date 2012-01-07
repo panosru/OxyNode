@@ -44,6 +44,7 @@ OxyFront's Extras!
 
 This framework contains the following libraries but feel free to remove the ones that you don't really need:
 
+
 Core (those are the core of the framework but still you can for example remove Modenizr or jQuery or Twitter bootstrap or replace them with the ones you prefer):
 
 * [HTML5 Boilerplate](http://html5boilerplate.com/)
@@ -54,12 +55,14 @@ Core (those are the core of the framework but still you can for example remove M
 * [Yepnope.js](http://yepnopejs.com/) included with Modernizr
 * [jQuery](http://jquery.com/)
 
+
 Used for DDD/CQRS (If you don't want to follow DDD/CQRS feel free to remove those libraries or use them in different way):
 
 * [Backbone.js](http://documentcloud.github.com/backbone/) - [Backbone Tutorials](http://backbonetutorials.com/) helped a lot to start up with Backbone.js!
 * [Underscore.js](http://documentcloud.github.com/underscore/)
 * [JSON2.js](https://github.com/douglascrockford/JSON-js)
 * [Require.js](http://requirejs.org/) to apply [JavaScript AMD (Asynchronous Module Definition)](https://github.com/amdjs/amdjs-api/wiki/AMD)
+
 
 Optional (those can be removed and they are here only in case you need them):
 

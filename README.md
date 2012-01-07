@@ -37,7 +37,7 @@ When you should use OxyFront with DDD / CQRS
 * If you have experience in advanced JavaScript OOP patterns
 * If you know what is DDD
 
-When you should not use OxyFront
+When you should not use OxyFront with DDD / CQRS
 --------------------------------
 
 You can use it for any kind of project, but more likely that you will not benefit from packages and features it provides. 

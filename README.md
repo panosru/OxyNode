@@ -42,24 +42,32 @@ before you start redesigning anything.
 OxyFront's Extras!
 ------------------
 
-This project uses:
+This framework contains the following libraries but feel free to remove the ones that you don't really need:
+
+Core (those are the core of the framework but still you can for example remove Modenizr or jQuery or Twitter bootstrap or replace them with the ones you prefer):
 
 * [HTML5 Boilerplate](http://html5boilerplate.com/)
 * Twitter Bootstrap [CSS](http://twitter.github.com/bootstrap/) & [JavaScript](http://twitter.github.com/bootstrap/javascript.html) 
 (Thanks to [mklabs](https://github.com/mklabs) who provided [a nice script](https://gist.github.com/1422879) to use html5boilerplate with twitter bootstrap!)
+* [LESS](http://lesscss.org/) Css files with less Node.js module for compiling
 * [Modernizr](http://www.modernizr.com/) (full featured)
 * [Yepnope.js](http://yepnopejs.com/) included with Modernizr
-* [Pretify](http://google-code-prettify.googlecode.com/svn/trunk/README.html) lib (code highlighting)
-* [Chosen](http://harvesthq.github.com/chosen/) select boxes lib
-* [Jwerty](http://keithcirkel.co.uk/jwerty/) for easy keyboard handling
-* [Bootbox](http://paynedigital.com/2011/11/bootbox-js-alert-confirm-dialogs-for-twitter-bootstrap) for nice alert and confirm type boxes
 * [jQuery](http://jquery.com/)
+
+Used for DDD/CQRS (If you don't want to follow DDD/CQRS feel free to remove those libraries or use them in different way):
+
 * [Backbone.js](http://documentcloud.github.com/backbone/) - [Backbone Tutorials](http://backbonetutorials.com/) helped a lot to start up with Backbone.js!
 * [Underscore.js](http://documentcloud.github.com/underscore/)
 * [JSON2.js](https://github.com/douglascrockford/JSON-js)
 * [Require.js](http://requirejs.org/) to apply [JavaScript AMD (Asynchronous Module Definition)](https://github.com/amdjs/amdjs-api/wiki/AMD)
-* [QUnit](http://docs.jquery.com/QUnit) for testings
-* [LESS](http://lesscss.org/) Css files with less Node.js module for compiling
+
+Optional (those can be removed and they are here only in case you need them):
+
+* [QUnit](http://docs.jquery.com/QUnit) for testings (I would recommend to keep this for Test Driven Development)
+* [Pretify](http://google-code-prettify.googlecode.com/svn/trunk/README.html) lib (code highlighting)
+* [Chosen](http://harvesthq.github.com/chosen/) select boxes lib
+* [Jwerty](http://keithcirkel.co.uk/jwerty/) for easy keyboard handling
+* [Bootbox](http://paynedigital.com/2011/11/bootbox-js-alert-confirm-dialogs-for-twitter-bootstrap) for nice alert and confirm type boxes
 * [Money.js](http://josscrowcroft.github.com/money.js/) as Node.js module
 * [Moment.js](http://momentjs.com/) as Node.js module
 * [Animate.css](http://daneden.me/animate/)

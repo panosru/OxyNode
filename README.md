@@ -5,10 +5,16 @@ OxyFront is a collection of libraries and theories in order to help developers t
 front-end level. OxyFront uses **Domain-driven Design (DDD)** approach, **Command-query Responsibility Segregation (CQRS)**
 architecture which follows **Command and Query Separation (CQS)** design pattern and **Event Sourcing (ES)** architectural 
 pattern. I build a diagram that show the [application flow](http://dl.dropbox.com/u/16165490/js-ddd-cqrs2.png) in client-side with the use of OxyFront.
-The project is inspired by [OxyBase](http://code.google.com/p/oxybase/) where I contribute and it is created by Tomas Bartkus.
+The project is inspired by [OxyBase](http://code.google.com/p/oxybase/) where I contribute and it is created by Tomas Bartkus.  
   
-The purpose of this framework is to easily start building front-end parts of web applications.
-
+  
+  
+  
+The purpose of this framework is to propose a way for building front-end web apps in a more structural way. I saw lot of proposals out there, for instance how to organize Backbone.js and etc but I'm really thinking, why not use DDD / CQRS to organize it and work with it like we work on server side? I believe of course that some things will be different in client side regarding those patterns but still the main idea remains. Of course the real benefit of DDD / CQRS / ES etc is mostly shown in server-side and in front-end I'm not really sure if there are any front-end developers who actually know about DDD / CQRS / ES but even so, even as an architectual and behavioral perspective it would really benefit us in many ways on interacting with our clients and also track our client's behaviour to improve our UX and many other things, we do that on server side... why not doing it on client-side too? The idea is the same.  
+  
+  
+  
+  
 Resources for DDD/CQRS/ES:
 
 * [Domain Driven Design - Step by Step](http://thinkddd.com/assets/2/Domain_Driven_Design_-_Step_by_Step.pdf)
@@ -98,3 +104,11 @@ could work in a better way)
 * Icons! lots of them!
 
 Lot's of more things are on their way!
+
+Ideas
+=====
+
+I got some ideas but I'm not puting those to *Next* chapter because for some of those I'm not sure if I will actually implement them and for some others I don't know when I will implement them.
+
+* I was thinking that having the events and the repository we could actually benefit of local storage or node.js some how. For example would be cool to send events to server and store those events in any storage mechanism that we will use (if could be sql or nosql or xml or csv or flat files or anything we like). This would have an actuall use for instance tracking the behaviour of our users in our web apps, see how they interact with it, when a client report a bug related to front-end we could actually get the events and reproduce the same error with same data, so many things could benefit us in case we log our front-end events, even if we need to consider redesigning a part of our page we could take good UX decisions having those data. We could store events only on logged in users, or in both this will be decided based in our business logic.
+* Another idea I had is to use localstorage as a some kind of queue mechanism to "push" events to server (it will be a some kind of fake pushing) so having this, imagine that your secretary uses your web app to do some things like add apointments, add todos and stuff like that. I believe it wasn't lot of times but it happen when eventualy for some minutes or some hours you went offline for any reason (constructions outside of the building, router crashed, ISP down etc) why not giving the ability to the secreatery (User) to continue work with the application localy and continue creating apointments and etc which will be added into local storage and then when the internet will be back again the events will be "pushed" to server in the exact same order they where executed (this could work even if the user close the browser and then open it again...) Of course in order to make the web app available localy it's not so simple but if you think about it with Backbone.js & Require.js it isn't too hard to implement, of course probabaly if we need to get something from server we won't be able to but still at least we could do some work instead of nothing...

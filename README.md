@@ -23,7 +23,7 @@ Resources for DDD/CQRS/ES:
 
 
 
-When you should use OxyFront
+When you should use OxyFront with DDD / CQRS
 ----------------------------
 
 * If you have complex domain (very complex business rules)

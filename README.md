@@ -15,7 +15,7 @@ Resources for DDD/CQRS/ES:
 * [DDD Sample & Definitions](http://dddsample.sourceforge.net/patterns-reference.html)
 * [Domain Event](http://martinfowler.com/eaaDev/DomainEvent.html)
 * **[Architectural Innovation: Eventing, Event Sourcing by Greg Young](http://skillsmatter.com/podcast/design-architecture/architectural-innovation-eventing-event-sourcing/zx-553)** *1hour video*
-* [CQRS and Event Sourcing - the Business Perspective by Greg Young](http://skillsmatter.com/podcast/design-architecture/greg-young-cqrs-event-sourcing-the-business-perspective) *2hour video*
+* **[CQRS and Event Sourcing - the Business Perspective by Greg Young](http://skillsmatter.com/podcast/design-architecture/greg-young-cqrs-event-sourcing-the-business-perspective)** *2hour video*
 * [Domain Driven Design and Development In Practice](http://www.infoq.com/articles/ddd-in-practice)
 * [Domain-driven design (Wikipedia)](http://en.wikipedia.org/wiki/Domain-driven_design)
 * **[Domain-Driven Design: Tackling Complexity in the Heart of Software by Eric Evans](http://www.amazon.com/dp/0321125215)** This is a must have book if you are about to dive in DDD

@@ -388,6 +388,8 @@ FileETag None
 # </IfModule>
 
 
+# Silex API
+
 <IfModule mod_rewrite.c>
     Options -MultiViews
 

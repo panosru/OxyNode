@@ -69,7 +69,6 @@ function animate(selector, animation, settings_class) {
 	}
 }
 
-
 $(document).ready(function () {
 	//Links with rel="external" will open in new window (or tab)
 	$("a[rel='external']").live('click', function(event){

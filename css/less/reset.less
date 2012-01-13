@@ -27,9 +27,9 @@ html {
       -ms-text-size-adjust: 100%;
 }
 // Focus states
-a:focus {
+/*a:focus {
   outline: thin dotted;
-}
+}*/
 // Hover & Active
 a:hover,
 a:active {
@@ -100,41 +100,42 @@ img {
 // Source: http://github.com/necolas/normalize.css
 
 // Font size in all browsers, margin changes, misc consistency
-button,
-input,
-select,
-textarea {
+.bootstrap button,
+.bootstrap input,
+.bootstrap select,
+.bootstrap textarea {
   font-size: 100%;
   margin: 0;
   vertical-align: baseline;
   *vertical-align: middle;
 }
-button,
-input {
+.bootstrap button,
+.bootstrap input {
   line-height: normal; // FF3/4 have !important on line-height in UA stylesheet
   *overflow: visible; // Inner spacing ie IE6/7
 }
-button::-moz-focus-inner,
-input::-moz-focus-inner { // Inner padding and border oddities in FF3/4
+.bootstrap button::-moz-focus-inner,
+.bootstrap input::-moz-focus-inner { // Inner padding and border oddities in FF3/4
   border: 0;
   padding: 0;
 }
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+.bootstrap button,
+.bootstrap input[type="button"],
+.bootstrap input[type="reset"],
+.bootstrap input[type="submit"] {
   cursor: pointer; // Cursors on all buttons applied consistently
   -webkit-appearance: button; // Style clicable inputs in iOS
 }
-input[type="search"] { // Appearance in Safari/Chrome
+.bootstrap input[type="search"] { // Appearance in Safari/Chrome
   -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
           box-sizing: content-box;
 }
-input[type="search"]::-webkit-search-decoration {
+.bootstrap input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; // Inner-padding issues in Chrome OSX, Safari 5
 }
+
 textarea {
   overflow: auto; // Remove vertical scrollbar in IE6-9
   vertical-align: top; // Readability and alignment cross-browser

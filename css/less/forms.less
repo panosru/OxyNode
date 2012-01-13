@@ -32,15 +32,15 @@ form .clearfix {
 }
 
 // Set font for forms
-label,
-input,
-select,
-textarea {
+.bootstrap label,
+.bootstrap input,
+.bootstrap select,
+.bootstrap textarea {
   #font > .sans-serif(normal,13px,normal);
 }
 
 // Float labels left
-label {
+.bootstrap label {
   padding-top: 6px;
   font-size: @basefont;
   line-height: @baseline;
@@ -51,20 +51,20 @@ label {
 }
 
 // Shift over the inside div to align all label's relevant content
-form .input {
+.bootstrap form .input {
   margin-left: 150px;
 }
 
 // Checkboxs and radio buttons
-input[type=checkbox],
-input[type=radio] {
+.bootstrap input[type=checkbox],
+.bootstrap input[type=radio] {
   cursor: pointer;
 }
 
 // Inputs, Textareas, Selects
-input,
-textarea,
-select,
+.bootstrap input,
+.bootstrap textarea,
+.bootstrap select,
 .uneditable-input {
   display: inline-block;
   width: 210px;
@@ -78,13 +78,13 @@ select,
 }
 
 // remove padding from select
-select {
+.bootstrap select {
   padding: initial;
 }
 
 // mini reset for non-html5 file types
-input[type=checkbox],
-input[type=radio] {
+.bootstrap input[type=checkbox],
+.bootstrap input[type=radio] {
   width: auto;
   height: auto;
   padding: 0;
@@ -94,7 +94,7 @@ input[type=radio] {
   border: none;
 }
 
-input[type=file] {
+.bootstrap input[type=file] {
   background-color: @white;
   padding: initial;
   border: initial;
@@ -102,15 +102,15 @@ input[type=file] {
   .box-shadow(none);
 }
 
-input[type=button],
-input[type=reset],
-input[type=submit] {
+.bootstrap input[type=button],
+.bootstrap input[type=reset],
+.bootstrap input[type=submit] {
   width: auto;
   height: auto;
 }
 
-select,
-input[type=file] {
+.bootstrap select,
+.bootstrap input[type=file] {
   height: @baseline * 1.5; // In IE7, the height of the select element cannot be changed by height, only font-size
   *height: auto; // Reset for IE7
   line-height: @baseline * 1.5;

@@ -36,52 +36,70 @@
 <body>
   <header>
 	<div class="topbar">
-      <div class="topbar-inner">
-        <div class="container">
-          <a class="brand" href="#">UI Starter kit</a>
+      <div class="topbar-inner" data-dropdown="dropdown">
+        <div class="container-fluid">
+          <a class="brand" href="#">Title here</a>
           <ul class="nav secondary-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#/user/create">About</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" href="#contact">Contact</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Secondary link</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Another link</a></li>
+				</ul>
+			</li>
           </ul>
+			<form class="pull-right" action="">
+			            <input type="text" placeholder="Search">
+			          </form>
         </div>
       </div>
     </div>
   </header>
   <div role="main">
-	<div class="container">
-      <div class="content">
-      	<!-- Main hero unit for a primary marketing message or call to action -->
-      	<div class="hero-unit">
-          <h1>Hello, world!</h1>
-          <p>Vestibulum id <code>ligula porta felis euismod</code> semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <p><a class="btn primary large">Learn more &raquo;</a></p>
-        </div>
-        <hr>
-      	<div class="hero-unit" id="createAccount"></div>
-        <hr>
-      	<!-- Example row of columns -->
-        <div class="row">
-          <div class="span5">
-            <h2>Heading</h2>
-            <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-          </div>
-          <div class="span5">
-            <h2>Heading</h2>
-             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-         </div>
-          <div class="span5">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-          </div>
-        </div>
+	<div class="container-fluid">
+		<div class="page-header">
+			<h1>jQuery UI Bootstrap <small>A Bootstrap-themed kickstart for jQuery UI widgets (v0.14)</small></h1>
+		</div>
+			<div class="filler sidebar"></div>
+			<div class="sidebar">
+				omfg2
+			</div>
+			<div class="filler content"></div>
+			<div class="content">
+				<!-- Main hero unit for a primary marketing message or call to action -->
+				      	<div class="hero-unit">
+				          <h1>Hello, world!</h1>
+				          <p>Vestibulum id <code>ligula porta felis euismod</code> semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+				          <p><a class="btn primary large">Learn more &raquo;</a></p>
+				        </div>
+				        <hr>
+				      	<div class="hero-unit bootstrap" id="createAccount"></div>
+				        <hr>
+				      	<!-- Example row of columns -->
+				        <div class="row">
+				          <div class="span5">
+				            <h2>Heading</h2>
+				            <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+				            <p><a class="btn" href="#">View details &raquo;</a></p>
+				          </div>
+				          <div class="span5">
+				            <h2>Heading</h2>
+				             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+				            <p><a class="btn" href="#">View details &raquo;</a></p>
+				         </div>
+				          <div class="span5">
+				            <h2>Heading</h2>
+				            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				            <p><a class="btn" href="#">View details &raquo;</a></p>
+				          </div>
+			</div>
     </div>
   </div>
   <footer>
-	<div class="container">
+	<div class="container-fluid">
 		<p class="pull-right">&copy; Company 2011</p>
 	</div>
   </footer>
@@ -92,6 +110,11 @@
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jQuery/jquery-1.7.1.js"><\/script>')</script>
+
+
+  <!-- Grab Google CDN's jQuery UI, with a protocol relative URL; fall back to local if offline -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
+  <script>window.jQuery.ui || document.write('<script src="js/libs/jQueryUI/jquery-ui-1.8.16.custom.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via build script -->
   <script defer src="js/plugins.js"></script>

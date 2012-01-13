@@ -17,11 +17,34 @@ window.log = function(){
 
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
+
 Modernizr.load({
 	test: (function () {
 			return true;
 		})(),
-	yep: 'js/libs/jQuery/plugins/chosen.jquery.js',
+	yep: [
+		'js/libs/jQueryUI/plugins/DateRangePicker/date.js',
+		'js/libs/jQueryUI/plugins/DateRangePicker/daterangepicker.js',
+		'js/libs/jQueryUI/plugins/wijmo/jquery.bgiframe-2.1.3-pre.js',
+		'js/libs/jQueryUI/plugins/wijmo/jquery.mousewheel.min.js',
+		'js/libs/jQueryUI/plugins/wijmo/jquery.wijmo-open.1.5.0.min.js'
+	],
+	callback: function (url, result, key) {
+		if (result) {
+			// code
+			$(document).ready(function () {
+				$(".nav").wijmenu();
+			});
+		}
+	}
+});
+
+
+Modernizr.load({
+	test: (function () {
+			return true;
+		})(),
+	yep: 'js/libs/jQuery/plugins/chosen.js',
 	callback: function (url, result, key) {
 		if (result) {
 			$(document).ready(function () {
@@ -175,12 +198,12 @@ Modernizr.load({
 
 Modernizr.load([{
 	test: (function () {return 0 < $('table.tablesorter').length; })(),
-	yep: 'js/libs/jQuery/plugins/tablesorter.jquery.js',
+	yep: 'js/libs/jQuery/plugins/tablesorter.js',
 	callback: function (url, result, key) {
 		if (result) {
 			//Code here
 			Modernizr.load([{
-				load : 'js/libs/jQuery/plugins/tablesorter.pager.jquery.js',
+				load : 'js/libs/jQuery/plugins/tablesorter.pager.js',
 				complete : function() {
 					$('table.tablesorter')
 						.tablesorter()

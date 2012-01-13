@@ -56,6 +56,7 @@ Core (those are the core of the framework but still you can for example remove M
 * [HTML5 Boilerplate](http://html5boilerplate.com/)
 * Twitter Bootstrap [CSS](http://twitter.github.com/bootstrap/) & [JavaScript](http://twitter.github.com/bootstrap/javascript.html) 
 (Thanks to [mklabs](https://github.com/mklabs) who provided [a nice script](https://gist.github.com/1422879) to use html5boilerplate with twitter bootstrap!)
+* [jQuery UI](http://jqueryui.com/) (with [Bootstrap theme](http://addyosmani.github.com/jquery-ui-bootstrap/))
 * [LESS](http://lesscss.org/) Css files with less Node.js module for compiling
 * [Modernizr](http://www.modernizr.com/) (full featured)
 * [Yepnope.js](http://yepnopejs.com/) included with Modernizr
@@ -112,3 +113,7 @@ I got some ideas but I'm not puting those to *Next* chapter because for some of 
 
 * I was thinking that having the events and the repository we could actually benefit of local storage or node.js some how. For example would be cool to send events to server and store those events in any storage mechanism that we will use (if could be sql or nosql or xml or csv or flat files or anything we like). This would have an actuall use for instance tracking the behaviour of our users in our web apps, see how they interact with it, when a client report a bug related to front-end we could actually get the events and reproduce the same error with same data, so many things could benefit us in case we log our front-end events, even if we need to consider redesigning a part of our page we could take good UX decisions having those data. We could store events only on logged in users, or in both this will be decided based in our business logic.
 * Another idea I had is to use localstorage as a some kind of queue mechanism to "push" events to server (it will be a some kind of fake pushing) so having this, imagine that your secretary uses your web app to do some things like add apointments, add todos and stuff like that. I believe it wasn't lot of times but it happen when eventualy for some minutes or some hours you went offline for any reason (constructions outside of the building, router crashed, ISP down etc) why not giving the ability to the secreatery (User) to continue work with the application localy and continue creating apointments and etc which will be added into local storage and then when the internet will be back again the events will be "pushed" to server in the exact same order they where executed (this could work even if the user close the browser and then open it again...) Of course in order to make the web app available localy it's not so simple but if you think about it with Backbone.js & Require.js it isn't too hard to implement, of course probabaly if we need to get something from server we won't be able to but still at least we could do some work instead of nothing...
+ 
+=============
+[Preview Here](http://panosru.github.com/OxyFront/)
+============

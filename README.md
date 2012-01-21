@@ -30,7 +30,7 @@ Resources for DDD/CQRS/ES:
 * [Domain-driven design (Wikipedia)](http://en.wikipedia.org/wiki/Domain-driven_design)
 * **[Domain-Driven Design: Tackling Complexity in the Heart of Software by Eric Evans](http://www.amazon.com/dp/0321125215)** This is a must have book if you are about to dive in DDD
 * **[Design Patterns: Elements of Reusable Object-Oriented Software](http://www.amazon.com/dp/0201633612/)** This is also a must have book in order to understand design patterns in OOP programming
-
+* [Q&A on DDD and CQRS with Eric Evans and Udi Dahan](http://www.youtube.com/watch?v=1DqiKMuVlXI) *55minutes video*
 
 
 When you should use OxyFront with DDD / CQRS

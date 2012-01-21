@@ -20,7 +20,7 @@ The purpose of this framework is to propose a way for building front-end web app
 Resources for DDD/CQRS/ES:
 
 * **[Domain Driven Design keynote by Eric Evans](http://www.youtube.com/watch?v=lVjxxhA10w0)** *1hour video*
-* **[CQRS keynote by Udi Dahan](http://www.youtube.com/watch?v=EkEz3pcLdgY)** *1hour video - the introduction is in spanish but the keynote is in English :) *
+* **[CQRS keynote by Udi Dahan](http://www.youtube.com/watch?v=EkEz3pcLdgY)** *1hour video - the introduction is in spanish but the keynote is in English*
 * [Domain Driven Design - Step by Step](http://thinkddd.com/assets/2/Domain_Driven_Design_-_Step_by_Step.pdf)
 * [DDD Sample & Definitions](http://dddsample.sourceforge.net/patterns-reference.html)
 * [Domain Event](http://martinfowler.com/eaaDev/DomainEvent.html)

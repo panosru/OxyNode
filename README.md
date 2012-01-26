@@ -3,6 +3,16 @@ OxyFront
 
 **OxyFront is in process of heavy development**
 
+> Since about a week now and a few days maybe I'm working on this project heavily to provide a solid package for
+> front-end development. I moved the scope of the project from 100% client-side to client-server side using node.js
+> I use several node modules like express.js and others to package an example of a complete front-end application.
+> I believe the project will be ready in a few days for a first release. Lot's of things are automated and 
+> the project is much better abstracted than before. Http requests are about 3 - 4 (for both css and js) instead of
+> 30+ as it was before. The performance is much better and the packge comes with lot's of features tested and proved 
+>to work well! **Stay tuned!**
+
+
+
 OxyFront is a collection of libraries and theories in order to help developers to structure their web applications in 
 front-end level. OxyFront uses **Domain-driven Design (DDD)** approach, **Command-query Responsibility Segregation (CQRS)**
 architecture which follows **Command and Query Separation (CQS)** design pattern and **Event Sourcing (ES)** architectural 

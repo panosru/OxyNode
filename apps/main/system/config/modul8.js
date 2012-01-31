@@ -4,9 +4,9 @@ var modul8  = require('modul8')
 
 module.exports = modul8($settings.paths.frontend + 'main.coffee')
 /*.in('development')
-  .set('logging', 'DEBUG')
+  //.set('logging', 'DEBUG')
   .analysis()
-    .output(console.log)
+    .output(console.info)
     .prefix(true)
     .suffix(false)
     .hide('external')*/
@@ -74,10 +74,11 @@ module.exports = modul8($settings.paths.frontend + 'main.coffee')
       'plugins/prettify.lang-xq.js',*/
       'plugins/prettify.lang-css.js',
       'plugins/prettify.lang-yaml.js',
-  
+      
       //Boot
       'boot.js'
     ])
     .path($settings.paths.assets + 'js/')
     .target($settings.paths.assets + 'js/out/bootstrap-libs.js')
   .compile($settings.paths.assets + 'js/out/bootstrap.js')
+;

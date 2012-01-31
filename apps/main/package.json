@@ -1,0 +1,56 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "author": "panosru <panosru@gmail.com> (http://www.panosru.com/)",
+  "description" : "",
+  "private": true,
+  "engines": {
+    "node": "~ 0.6.8"
+  },
+  "main" : "app.js",
+  "scripts" : {
+    "start" : "NODE_ENV=development nodemon -d 0"
+  },
+  "dependencies"  : {
+    "settings"            : "latest",
+    "JSON"                : "latest",
+    "uglify-js"           : "latest",
+    "colors"              : "latest",
+    "coffee-script"       : "latest",
+    "stylus"              : "latest",
+    "modul8"              : "latest",
+    "express-resource"    : "latest",
+    "express-namespace"   : "latest",
+    "express-expose"      : "latest",
+    "socket.io"           : "latest",
+    "optimist"            : "latest",
+    "backbone-browserify" : "latest",
+    "underscore"          : "latest",
+    "bootstrap-stylus"    : "latest",
+    "money"               : "latest",
+    "moment"              : "latest",
+    "bundle-up"           : "latest",
+    "gzippo"              : "latest",
+    "dice-roll"           : "latest",
+    "nib"                 : "latest",
+    "gravatar"            : "latest",
+    "i18next"             : "latest",
+    "express-chromeframe" : "latest"
+  },
+  "devDependencies": {
+    "mocha": "latest",
+    "should": "latest"
+  },
+  "operations"  : {
+    "fetch_scripts"  : [
+      { "filename" : "jquery.js",     "path" : "public/js/",  "url" : "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" },
+      { "filename" : "jquery-ui.js",  "path" : "public/js/",  "url" : "https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" },
+      { "filename" : "jwerty.js",     "path" : "assets/js/",  "url" : "https://raw.github.com/keithamus/jwerty/master/jwerty.js" },
+      { "filename" : "bootbox.js",    "path" : "assets/js/",  "url" : "https://raw.github.com/makeusabrew/bootbox/master/bootbox.js" },
+      { "filename" : "prettify.js",   "path" : "assets/js/",  "url" : "http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js" },
+      { "filename" : "jade.js",       "path" : "assets/js/",  "url" : "https://raw.github.com/weepy/jade-browser/master/jade.js"},
+      { "filename" : "jade-shim.js",  "path" : "assets/js/",  "url" : "https://raw.github.com/weepy/jade-browser/master/jade-shim.js"}
+    ],
+    "compress_scripts"  : []
+  }
+} 

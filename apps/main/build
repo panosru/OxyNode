@@ -1,0 +1,74 @@
+#!/usr/bin/env node
+
+//set variables
+var util            = require('util');
+var fs              = require('fs');
+var parser          = require("uglify-js").parser;
+var uglify          = require("uglify-js").uglify;
+var child_proccess  = require('child_process');
+var colors          = require('colors');
+var EOL             = (process.platform === 'win32' ? '\r\n' : '\n');
+var app             = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+
+//Options
+var argv = require('optimist')
+  .usage('Utility tool to make your life easier!'.green)
+  .option('fetch-scripts', {
+    alias : 'fs',
+    desc  : 'Fetches defined files from their servers into the project',
+    type  : 'boolean'
+  })
+  .option('compress-scripts', {
+    alias : 'cs',
+    desc  : 'Compress defined javascript files',
+    type  : 'boolean'
+  })
+  .check(function (argv) {
+    if (argv.help || argv.h) throw '';
+    if (process.argv.length < 1) throw 'Specify a parameter.';
+  })
+  .argv
+;
+
+//Actions
+function fetch_scripts(callbackfn) {
+  util.print(EOL + 'Fetching files..'.green + EOL);
+  
+  var iterator = 0;
+  app.operations.fetch_scripts.forEach(function (item, index) {
+    child_proccess.exec('curl ' + item.url + ' > ' + item.path + item.filename, function (error, stdout, stderr) {
+      if (error !== null) {
+        util.print(colors.red('Error while getting ' + item.filename + '! Error: ') + error + EOL);
+      } else {
+        util.print('Getting ' + item.path + item.filename + EOL);
+      }
+      iterator++;
+      //Call callback function in case is set
+      if (('undefined' !== typeof callbackfn) && (app.operations.fetch_scripts.length === iterator)) callbackfn();
+    });
+  });
+}
+
+function compress_scripts() {
+  util.print(EOL + 'Compressing files..'.green + EOL);
+  app.operations.compress_scripts.forEach(function (item) {
+    util.print('Compressing ' + item + EOL);
+    var ast = parser.parse(fs.readFileSync(item, 'utf8')); // parse code and get the initial AST
+        ast = uglify.ast_mangle(ast); // get a new AST with mangled names
+        ast = uglify.ast_squeeze(ast); // get an AST with compression optimizations
+    fs.writeFileSync(item, uglify.gen_code(ast), 'utf8');// compressed code here
+  });
+}
+
+//Run the script
+util.print(colors.yellow('Running action for: [' + app.name + ']') + EOL);
+
+//Check if fetch scripts and compress scripts params are passed together
+if (argv.fs && argv.cs) {
+  //Fetch the scripts first and then execute the compress method
+  fetch_scripts(compress_scripts);
+} else {
+  if (argv.fs) fetch_scripts();
+  if (argv.cs) compress_scripts();
+}
+if(argv.gd) get_dependencies();

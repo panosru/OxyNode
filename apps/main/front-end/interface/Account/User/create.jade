@@ -1,0 +1,29 @@
+form#createAccountForm.animated.bounceInRight
+  fieldset
+    legend Create Account
+    .clearfix
+      label(for='name') Name
+      .input
+        input#name.xlarge(name='name', size='30', type='text', placeholder='John Doe')
+    .clearfix
+      label(for='lang') Language
+      .input
+        select#lang.chosen(name='lang')
+          option(value='en') English
+          option(value='ru') Russian
+          option(value='fr') French
+          option(value='el') Greek
+          option(value='sp') Spanish
+    .clearfix
+      label(for='country') Country
+      .input
+        select#country.chosen(name='country')
+          option(value='uk') United Kingdom
+          option(value='ru') Russia
+          option(value='fr') France
+          option(value='gr') Greece
+          option(value='sp') Spain
+    .actions
+      input#saveAccount.btn.primary(type='submit', value='Save changes')
+      | &nbsp;
+      button.btn(type='reset') Cancel

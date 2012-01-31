@@ -1,0 +1,3 @@
+generated/
+*.jade
+node_modules

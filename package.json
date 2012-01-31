@@ -13,7 +13,8 @@
   },
   "dependencies"  : {
     "jade"                : "latest",
-    "express"             : "latest"
+    "express"             : "latest",
+    "markdown"            : "latest"
   },
   "devDependencies": {}
 } 

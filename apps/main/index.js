@@ -23,24 +23,22 @@ i18n.init({
   , resGetPath : $settings.paths.locales
   , resSetPath : $settings.paths.locales
 });
-i18n.serveClientScript(app)        // grab i18next.js in browser
-    .serveDynamicResources(app)    // route which returns all resources in on response
-    .serveMissingKeyRoute(app);    // route to send missing keys
 
 // Bundle assets
 BundleUp(app, $settings.paths.config + 'assets', {
-  staticRoot : $settings.paths.public,
-  staticUrlRoot : '/',
-  bundle : true,
-  compilers: {
-    stylus: function(str, path) {
-      return stylus(str)
-        .set("filename", path)
-        .set("compress", true)
-        .use(nib())
-        .import("nib") // This imports the nib lib
+    staticRoot : $settings.paths.public
+  , staticUrlRoot : '/'
+  , bundle : true
+  , compilers: {
+      stylus: function(str, path) {
+        return stylus(str)
+          .set("filename", path)
+          .set("compress", true)
+          .use(nib())
+          .import("nib") // This imports the nib lib
+        ;
+      }
     }
-  }
 });
 
 // Load System
@@ -68,11 +66,10 @@ app.configure(function(){
   app.use(express.cookieParser());
   app.use(express.session({ secret: $settings.app.session.secret }));
   app.use(i18n.handle);
-  //app.use(express.csrf());
+  app.use(express.csrf());
   app.use(require($settings.paths.config + 'modul8'));
-  app.use(chromeframe('IE8'))
+  //app.use(chromeframe('IE8'))
   app.use(app.router);
-  //app.use(express.static($settings.paths.public));
   app.use(Gzippo.staticGzip($settings.paths.public));
   app.use(Gzippo.compress());
   app.use(_ErrorHandler);
@@ -90,12 +87,17 @@ app.configure('production', function(){
 });
 
 // Dynamic helpers
-i18n.registerAppHelper(app);
-/*app.dynamicHelpers({
+i18n.serveClientScript(app)        // grab i18next.js in browser
+    .serveDynamicResources(app)    // route which returns all resources in on response
+    //.serveMissingKeyRoute(app)    // route to send missing keys
+    .registerAppHelper(app)
+;
+
+app.dynamicHelpers({
   csrf_token : function(req, res) {
     return req.session._csrf;
   }
-});*/
+});
 
 //Setup Socket.IO
 // Routes

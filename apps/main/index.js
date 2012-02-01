@@ -22,6 +22,7 @@ i18n.init({
   , fallbackLng : 'en-US'
   , resGetPath : $settings.paths.locales
   , resSetPath : $settings.paths.locales
+  , dynamicLoad: true
 });
 
 // Bundle assets
@@ -89,7 +90,11 @@ app.configure('production', function(){
 // Dynamic helpers
 i18n.serveClientScript(app)        // grab i18next.js in browser
     .serveDynamicResources(app)    // route which returns all resources in on response
+<<<<<<< HEAD
     //.serveMissingKeyRoute(app)    // route to send missing keys
+=======
+    .serveMissingKeyRoute(app)    // route to send missing keys
+>>>>>>> 045b528129f2f31bac0b3a98c7b0df4d5c56a8a5
     .registerAppHelper(app)
 ;
 

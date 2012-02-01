@@ -81,8 +81,16 @@ html.no-js(lang='en')
     //Bootstrap application 
     != renderJs()
     
-    //Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
     script
+      $.i18n.init({
+          dynamicLoad: true
+        , resGetPath : 'locales/resources.json?lng=__lng__&ns=__ns__'
+        , useLocalStorage: false // in production you could use this
+      }, function(t) {
+         console.log(t('creator.firstname'));
+      });
+      
+      //Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
       /*
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

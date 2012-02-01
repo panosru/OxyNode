@@ -84,6 +84,7 @@ html.no-js(lang='en')
     script
       $.i18n.init({
           dynamicLoad: true
+        , fallbackLng : 'en-US'
         , resGetPath : 'locales/resources.json?lng=__lng__&ns=__ns__'
         , useLocalStorage: false // in production you could use this
       }, function(t) {

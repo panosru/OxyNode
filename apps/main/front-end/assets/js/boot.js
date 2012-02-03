@@ -88,7 +88,8 @@ function animate(selector, animation, settings_class) {
 
 
 $(document).ready(function () {
-  $(".nav").wijmenu();
+  //$(".nav").wijmenu();
+  $('.dropdown-toggle').dropdown();
   
   $('select.chosen').chosen();
   

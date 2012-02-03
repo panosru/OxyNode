@@ -8,6 +8,7 @@ module.exports = function (assets) {
   assets.addJs('js/modernizr.js', 'head');
 
   //CSS + Stylus
+  assets.addCss('css/bootstrap/bootstrap.less')
   assets.addCss('css/style.styl');
   assets.addCss('css/error-page.styl', 'error');
 };

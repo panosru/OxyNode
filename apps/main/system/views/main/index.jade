@@ -1,3 +1,18 @@
+.subnav
+  ul.nav.nav-pills
+    li.active: a(href='#typography')
+      | Typography
+    li: a(href='#code')
+      | Code
+    li: a(href='#tables')
+      | Tables
+    li: a(href='#forms')
+      | Forms
+    li: a(href='#buttons')
+      | Buttons
+    li: a(href='#icons')
+      | Icons by Glyphicons
+br
 // Main hero unit for a primary marketing message or call to action 
 .hero-unit
   h1 Hello, world! 
@@ -6,8 +21,8 @@
     code ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
   p: a.btn.primary.large Learn more »
 hr
-
-div.hero-unit.bootstrap
+//
+  div.hero-unit.bootstrap
   form(method='post')
     input(type='hidden', name='_csrf', value=csrf_token)
     input(type='text', name='string')

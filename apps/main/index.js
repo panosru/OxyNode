@@ -28,7 +28,7 @@ i18n.init({
 BundleUp(app, $settings.paths.config + 'assets', {
     staticRoot : $settings.paths.public
   , staticUrlRoot : '/'
-  , bundle : true
+  , bundle : false // Due to a bug with Less files
   , compilers: {
       stylus: function(str, path) {
         return stylus(str)

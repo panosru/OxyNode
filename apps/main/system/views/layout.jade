@@ -20,7 +20,7 @@ html.no-js(lang='en')
     link(rel='dns-prefetch', href='//ajax.googleapis.com')
     link(rel='dns-prefetch', href='//cdn.wijmo.com')
     != renderJs('head')
-  body
+  body(data-spy='scroll', data-target='.subnav', data-offset='50')
     header
       .navbar.navbar-fixed-top
         .navbar-inner(data-dropdown='dropdown')

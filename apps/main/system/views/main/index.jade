@@ -1,17 +1,21 @@
 .subnav
   ul.nav.nav-pills
-    li.active: a(href='#typography')
-      | Typography
-    li: a(href='#code')
-      | Code
-    li: a(href='#tables')
-      | Tables
-    li: a(href='#forms')
-      | Forms
-    li: a(href='#buttons')
-      | Buttons
-    li: a(href='#icons')
-      | Icons by Glyphicons
+    li.active: a(href='#typography') Typography
+    li: a(href='#code') Code
+    li: a(href='#tables') Tables
+    li: a(href='#forms') Forms
+    li: a(href='#buttons') Buttons
+    li.dropdown
+      a.dropdown-toggle(href='#icon', data-toggle='dropdown') Icons by Glyphicons
+        b.caret
+      ul.dropdown-menu
+        li
+          a(href='#') Secondary link
+        li
+          a(href='#') Something else here
+        li.divider
+        li
+          a(href='#') Another link
 br
 // Main hero unit for a primary marketing message or call to action 
 .hero-unit

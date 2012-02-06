@@ -52,7 +52,28 @@ html.no-js(lang='en')
             | jQuery UI Bootstrap
             small A Bootstrap-themed kickstart for jQuery UI widgets (v0.14)
         .filler.sidebar
-        .sidebar omfg2
+        .sidebar
+          ul.nav.nav-list
+            li.nav-header List header
+            li.active: a(href='#')
+              i.icon-white.icon-home 
+              |  Home
+            li: a(href='#')
+              i.icon-book
+              |  Library
+            li: a(href='#')
+              i.icon-pencil
+              |  Applications
+            li.nav-header Another list header
+            li: a(href='#')
+              i.icon-user
+              |  Profile
+            li: a(href='#')
+              i.icon-cog
+              |  Settings
+            li: a(href='#')
+              i.icon-flag
+              |  Help
         .filler.content
         .content!= body
     footer

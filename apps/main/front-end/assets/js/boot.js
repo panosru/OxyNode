@@ -89,8 +89,8 @@ function animate(selector, animation, settings_class) {
 
 $(document).ready(function () {
   //$(".nav").wijmenu();
-  $('.dropdown-toggle').dropdown();
   
+  $('.dropdown-toggle').dropdown();
   $('select.chosen').chosen();
   
   // fix sub nav on scroll
@@ -106,9 +106,6 @@ $(document).ready(function () {
   
   function processScroll() {
     var i, scrollTop = $win.scrollTop()
-    log(scrollTop);
-    log(navTop);
-    log(!isFixed);
     if (scrollTop >= navTop && !isFixed) {
       isFixed = 1
       $nav.addClass('subnav-fixed')

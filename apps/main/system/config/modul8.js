@@ -15,8 +15,8 @@ module.exports = modul8($settings.paths.frontend + 'main.coffee')
   .after(modul8.minifier)
 .in('all')
   .domains({
-    'BC' : $settings.paths.bounded_contexts,
-    'IF' : $settings.paths.interface
+    'BC'      : $settings.paths.bounded_contexts,
+    'IF'      : $settings.paths.interface
   })
   .npm( $settings.paths.root + 'node_modules')
   .register('.jade', function (code, bare) {        

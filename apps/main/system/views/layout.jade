@@ -101,7 +101,8 @@ html.no-js(lang='en')
       script(src='//cdn.wijmo.com/jquery.wijmo-open.1.5.0.min.js')
     script(src='/i18next/i18next.js')
     
-    //Bootstrap application 
+    //Bootstrap application
+    //!script!= javascript
     != renderJs()
     
     script
@@ -109,9 +110,7 @@ html.no-js(lang='en')
           dynamicLoad: true
         , fallbackLng : 'en-US'
         , resGetPath : 'locales/resources.json?lng=__lng__&ns=__ns__'
-        , useLocalStorage: true // in production you could use this
-      }, function(t) {
-         console.log(t('creator.firstname'));
+        , useLocalStorage: false // in production you could use this
       });
       
       //Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

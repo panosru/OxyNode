@@ -89,21 +89,23 @@ function animate(selector, animation, settings_class) {
 
 $(document).ready(function () {
   //$(".nav").wijmenu();
-  
+
+  $('#tabs').tabs();
+
   $('.dropdown-toggle').dropdown();
   $('select.chosen').chosen();
-  
+
   // fix sub nav on scroll
   var $win = $(window)
     , $nav = $('.subnav')
     , navTop = $('.subnav').length && $('.subnav').offset().top - 40
     , isFixed = 0
   ;
-    
+
   processScroll()
-  
+
   $win.on('scroll', processScroll);
-  
+
   function processScroll() {
     var i, scrollTop = $win.scrollTop()
     if (scrollTop >= navTop && !isFixed) {
@@ -114,25 +116,25 @@ $(document).ready(function () {
       $nav.removeClass('subnav-fixed')
     }
   }
-  
+
   /*
   $('#my-modal').modal({
     keyboard: true
   });
-  
+
   $('#my-modal').modal({
     keyboard: true
   });
-  
+
   prettyPrint();
-  
+
   $('table.tablesorter')
     .tablesorter()
     .tablesorterPager({
       container: $('table.tablesorter > tfoot.pager')
     })
   ;*/
-  
+
   //Links with rel="external" will open in new window (or tab)
   $("a[rel='external']").live("click", function(event) {
     event.preventDefault();

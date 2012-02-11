@@ -5,5 +5,9 @@
     "creator": {
         "firstname": "Panos",
         "lastname": "Kosmidis"
+    },
+    "error" : {
+      "NotFound" : "Not Found",
+      "NoAccess" : "You are not authoarized to view this content!"
     }
 }

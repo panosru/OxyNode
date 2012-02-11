@@ -12,9 +12,9 @@
     "start" : "NODE_ENV=development nodemon -d 0"
   },
   "dependencies"  : {
-    "jade"                : "latest",
-    "express"             : "latest",
-    "markdown"            : "latest"
+    "markdown" : "latest",
+    "jade"     : "latest",
+    "express"  : "latest"
   },
   "devDependencies": {}
 } 

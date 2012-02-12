@@ -1,3 +1,6 @@
+// Init Coffee-script system wide (ICED) [TameJS]
+require('iced-coffee-script');
+
 // Get Express
 var express = require('express');
 

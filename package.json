@@ -12,9 +12,11 @@
     "start" : "NODE_ENV=development nodemon -d 0"
   },
   "dependencies"  : {
-    "markdown" : "latest",
-    "jade"     : "latest",
-    "express"  : "latest"
+    "coffee-script"       : "latest",
+    "iced-coffee-script"  : "latest",
+    "markdown"            : "latest",
+    "jade"                : "latest",
+    "express"             : "latest"
   },
   "devDependencies": {}
 } 

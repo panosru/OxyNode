@@ -4,11 +4,11 @@ exports.common = {
   paths : {
       config            : path.normalize(__dirname + '/')    
     , system            : path.normalize(__dirname + '/../')
-    , locales           : path.normalize(__dirname + '/../locales/') + '__lng__/__ns__.json'
+    , locales           : path.normalize(__dirname + '/../i18n/locales/') + '__lng__/__ns__.json'
     , root              : path.normalize(__dirname + '/../../')
     , helpers           : path.normalize(__dirname + '/../helpers/')
     , views             : path.normalize(__dirname + '/../views/')
-    , routes            : path.normalize(__dirname + '/../routes/')
+    , routes            : path.normalize(__dirname + '/../Router/')
     , public            : path.normalize(__dirname + '/../../public/')
     , frontend          : path.normalize(__dirname + '/../../front-end/')
     , assets            : path.normalize(__dirname + '/../../front-end/assets/')

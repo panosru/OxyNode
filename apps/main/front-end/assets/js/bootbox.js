@@ -1,7 +1,8 @@
 var bootbox = window.bootbox || (function() {
-    var that = {};
 
-    var _locale = _defaultLocale = 'en';
+    var _locale = _defaultLocale = 'en',
+        _animate = true,
+        that = {};
 
     /**
      * standard locales. Please add more according to ISO 639-1 standard. Multiple language variants are
@@ -27,6 +28,11 @@ var bootbox = window.bootbox || (function() {
             OK      : 'OK',
             CANCEL  : 'Cancelar',
             CONFIRM : 'Aceptar'
+        },
+        'br' : {
+            OK      : 'OK',
+            CANCEL  : 'Cancelar',
+            CONFIRM : 'Sim'
         }
     };
 
@@ -251,7 +257,7 @@ var bootbox = window.bootbox || (function() {
                 _class = handlers[i]['class'];
             } else if (i == handlers.length -1 && handlers.length <= 2) {
                 // always add a primary to the main option in a two-button dialog
-                _class = 'primary';
+                _class = 'btn-primary';
             }
 
             if (handlers[i]['label']) {
@@ -265,7 +271,7 @@ var bootbox = window.bootbox || (function() {
             callbacks[i] = callback;
         }
 
-        var parts = ["<div class='bootbox modal hide fade'>"];
+        var parts = ["<div class='bootbox modal'>"];
 
         if (options['header']) {
             var closeButton = '';
@@ -286,6 +292,13 @@ var bootbox = window.bootbox || (function() {
         parts.push("</div>");
 
         var div = $(parts.join("\n"));
+
+        // check whether we should fade in/out
+        var shouldFade = (typeof options.animate === 'undefined') ? _animate : options.animate;
+
+        if (shouldFade) {
+            div.addClass("fade");
+        }
 
         // now we've built up the div properly we can inject the content whether it was a string or a jQuery object
         $(".modal-body", div).html(str);
@@ -310,7 +323,7 @@ var bootbox = window.bootbox || (function() {
 
         // well, *if* we have a primary - give the last dom element (first displayed) focus
         div.bind('shown', function() {
-            $("a.primary:last", div).focus();
+            $("a.btn-primary:last", div).focus();
         });
 
         $("a", div).click(function(e) {
@@ -327,19 +340,22 @@ var bootbox = window.bootbox || (function() {
         if (options.keyboard == null) {
             options.keyboard = (typeof options.onEscape == 'function');
         }
+        $("body").append(div);
+
         div.modal({
-            "backdrop" : options.backdrop || "static",
-            "show"     : options.show || true,
+            "backdrop" : options.backdrop || true,
             "keyboard" : options.keyboard
         });
-
-        $("body").append(div);
 
         return div;
     }
 
     that.hideAll = function() {
         $(".bootbox").modal("hide");
+    }
+
+    that.animate = function(animate) {
+        _animate = animate;
     }
 
     return that;

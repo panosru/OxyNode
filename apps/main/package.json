@@ -45,11 +45,11 @@
     "fetch_scripts"  : [
       { "filename" : "jquery.js",     "path" : "public/js/",  "url" : "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" },
       { "filename" : "jquery-ui.js",  "path" : "public/js/",  "url" : "https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" },
-      { "filename" : "jwerty.js",     "path" : "assets/js/",  "url" : "https://raw.github.com/keithamus/jwerty/master/jwerty.js" },
-      { "filename" : "bootbox.js",    "path" : "assets/js/",  "url" : "https://raw.github.com/makeusabrew/bootbox/master/bootbox.js" },
-      { "filename" : "prettify.js",   "path" : "assets/js/",  "url" : "http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js" },
-      { "filename" : "jade.js",       "path" : "assets/js/",  "url" : "https://raw.github.com/weepy/jade-browser/master/jade.js"},
-      { "filename" : "jade-shim.js",  "path" : "assets/js/",  "url" : "https://raw.github.com/weepy/jade-browser/master/jade-shim.js"}
+      { "filename" : "jwerty.js",     "path" : "front-end/assets/js/",  "url" : "https://raw.github.com/keithamus/jwerty/master/jwerty.js" },
+      { "filename" : "bootbox.js",    "path" : "front-end/assets/js/",  "url" : "https://raw.github.com/makeusabrew/bootbox/master/bootbox.js" },
+      { "filename" : "prettify.js",   "path" : "front-end/assets/js/",  "url" : "http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js" },
+      { "filename" : "jade.js",       "path" : "front-end/assets/js/",  "url" : "https://raw.github.com/weepy/jade-browser/master/jade.js"},
+      { "filename" : "jade-shim.js",  "path" : "front-end/assets/js/",  "url" : "https://raw.github.com/weepy/jade-browser/master/jade-shim.js"}
     ],
     "compress_scripts"  : []
   }

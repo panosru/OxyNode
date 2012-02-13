@@ -3,6 +3,7 @@ _           = require 'npm::underscore'
 Backbone    = require 'npm::backbone-browserify'
 Router      = require './router'
 Repository  = require './repository'
+Facade      = require './facade'
 
 class Application
   constructor : (@repositories, @router) ->
@@ -63,6 +64,6 @@ class Application
 
 
 
-module.exports = ->
+module.exports = ->  
   # Make it global
   window.App = new Application Repository, Router

@@ -16,7 +16,8 @@ module.exports = modul8($settings.paths.frontend + 'main.coffee')
 .in('all')
   .domains({
     'BC'      : $settings.paths.bounded_contexts,
-    'IF'      : $settings.paths.interface
+    'IF'      : $settings.paths.interface,
+    'LIB'     : $settings.paths.frontend
   })
   .npm( $settings.paths.root + 'node_modules')
   .register('.jade', function (code, bare) {        
@@ -27,13 +28,11 @@ module.exports = modul8($settings.paths.frontend + 'main.coffee')
   })
   .libraries()
     .list([
-      //Jade
+      // Jade
       'jade.js',
       'jade-shim.js',
       
-      'plugins/jquery.chosen.js',
-      
-      //Twitter + jQuery UI bootstrap plugins
+      // Twitter + jQuery UI bootstrap plugins
       'plugins/bootstrap-alert.js',
       'plugins/bootstrap-button.js',
       'plugins/bootstrap-dropdown.js',
@@ -49,16 +48,17 @@ module.exports = modul8($settings.paths.frontend + 'main.coffee')
       'bootbox.js',
       'jwerty.js',
       
-      //jQuery UI plugins
+      // jQuery UI plugins
       'plugins/UI/DateRangePicker/date.js',
       'plugins/UI/DateRangePicker/daterangepicker.js',
       
-      //jQuery plugins
+      // jQuery plugins
       'plugins/jquery.inlog.js',
       'plugins/jquery.tablesorter.js',
       'plugins/jquery.tablesorter.pager.js',
+      'plugins/jquery.chosen.js',
       
-      //Prettify + langs
+      // Prettify + langs
       'prettify.js',
       /*'plugins/prettify.lang-apollo.js',
       'plugins/prettify.lang-clj.js',          

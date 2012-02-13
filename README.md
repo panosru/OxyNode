@@ -26,33 +26,6 @@ OxyNode uses **Domain-driven Design (DDD)** approach, **Command-query Responsibi
 The purpose of this framework is to propose a way for building front-end web apps in a more structural way. I saw lot of proposals out there, for instance how to organize Backbone.js and etc but I'm really thinking, why not use DDD / CQRS to organize it and work with it like we work on server side? I believe of course that some things will be different in client side regarding those patterns but still the main idea remains. Of course the real benefit of DDD / CQRS / ES etc is mostly shown in server-side and in front-end I'm not really sure if there are any front-end developers who actually know about DDD / CQRS / ES but even so, even as an architectual and behavioral perspective it would be a real benefit in many ways on interacting with clients and also track client's behaviour to improve UX and many other things, we do that on server side... why not doing it on client-side too? The idea is the same.  
 
 
-<<<<<<< HEAD
-=======
-> Since about a week now and a few days maybe I'm working on this project heavily to provide a solid package for
-> front-end development. I moved the scope of the project from 100% client-side to client-server side using node.js
-> I use several node modules like express.js and others to package an example of a complete front-end application.
-> I believe the project will be ready in a few days for a first release. Lot's of things are automated and 
-> the project is much better abstracted than before. Http requests are about 3 - 4 (for both css and js) instead of
-> 30+ as it was before. The performance is much better and the packge comes with lot's of features tested and proved 
->to work well! **Stay tuned!**
-
-
-
-OxyFront is a collection of libraries and theories in order to help developers to structure their web applications in 
-front-end level. OxyFront uses **Domain-driven Design (DDD)** approach, **Command-query Responsibility Segregation (CQRS)**
-architecture which follows **Command and Query Separation (CQS)** design pattern and **Event Sourcing (ES)** architectural 
-pattern. I build a diagram that show the [application flow](http://dl.dropbox.com/u/16165490/js-ddd-cqrs2.png) in client-side with the use of OxyFront.
-The project is inspired by [OxyBase](http://code.google.com/p/oxybase/) where I contribute and it is created by Tomas Bartkus.  
-  
-  
-  
-  
-The purpose of this framework is to propose a way for building front-end web apps in a more structural way. I saw lot of proposals out there, for instance how to organize Backbone.js and etc but I'm really thinking, why not use DDD / CQRS to organize it and work with it like we work on server side? I believe of course that some things will be different in client side regarding those patterns but still the main idea remains. Of course the real benefit of DDD / CQRS / ES etc is mostly shown in server-side and in front-end I'm not really sure if there are any front-end developers who actually know about DDD / CQRS / ES but even so, even as an architectual and behavioral perspective it would really benefit us in many ways on interacting with our clients and also track our client's behaviour to improve our UX and many other things, we do that on server side... why not doing it on client-side too? The idea is the same.  
-  
-  
-  
-  
->>>>>>> origin/master
 Resources for DDD/CQRS/ES:
 
 * **[Domain Driven Design keynote by Eric Evans](http://www.youtube.com/watch?v=lVjxxhA10w0)** *1hour video*
@@ -67,10 +40,7 @@ Resources for DDD/CQRS/ES:
 * **[Domain-Driven Design: Tackling Complexity in the Heart of Software by Eric Evans](http://www.amazon.com/dp/0321125215)** This is a must have book if you are about to dive in DDD
 * **[Design Patterns: Elements of Reusable Object-Oriented Software](http://www.amazon.com/dp/0201633612/)** This is also a must have book in order to understand design patterns in OOP programming
 * [Q&A on DDD and CQRS with Eric Evans and Udi Dahan](http://www.youtube.com/watch?v=1DqiKMuVlXI) *55minutes video*
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 
 When you should use OxyNode with DDD / CQRS
 ----------------------------

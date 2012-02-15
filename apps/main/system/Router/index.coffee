@@ -5,7 +5,7 @@ class Router
   constructor : (@Server, @ErrorHandler) ->
     
   init : ->
-    @Server.all '/', routes.app.index
+    @Server.all '/', routes.home.index
     @Server.get '/api/user/:id', routes.api.get_user
     
     # Error routes

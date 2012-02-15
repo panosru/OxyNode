@@ -19,13 +19,18 @@ html.no-js(lang='en')
     != renderStyles()
     link(rel='dns-prefetch', href='//ajax.googleapis.com')
     link(rel='dns-prefetch', href='//cdn.wijmo.com')
+    //!Le fav and touch icons
+    //link(rel='shortcut icon', href='/assets/ico/favicon.ico')
+    link(rel='apple-touch-icon', href='/assets/ico/apple-touch-icon.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='/assets/ico/apple-touch-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='/assets/ico/apple-touch-icon-114x114.png')
     != renderJs('head')
   body(data-spy='scroll', data-target='.subnav', data-offset='50')
     header
       .navbar.navbar-fixed-top
         .navbar-inner(data-dropdown='dropdown')
           .container-fluid
-            a.brand(href='#') OxyNode
+            a.brand(href='#'): img(src='/assets/img/home.svg', style='height:18px')
             .nav-collapse
               ul.nav
                 li.active
@@ -55,7 +60,7 @@ html.no-js(lang='en')
         .sidebar
           ul.nav.nav-list
             li.nav-header List header
-            li.active: a(href='#')
+            li.active: a(href='/')
               i.icon-white.icon-home 
               |  Home
             li: a(href='#')
@@ -77,17 +82,18 @@ html.no-js(lang='en')
         .content!= body
     footer
       .container-fluid
+        i Please if you think that any of the project's file violate any license please let me know if it does it's not on purpose and I will replace/remove or ask permission to use it.
         p.pull-right &copy; Company 2011
     
     //Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
     script
-      window.jQuery || document.write('<script src="/js/jquery.js"><\\/script>')
+      window.jQuery || document.write('<script src="/assets/js/jquery.js"><\\/script>')
     
     //Grab Google CDN's jQuery UI, with a protocol relative URL; fall back to local if offline 
     script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js')
     script
-      window.jQuery.ui || document.write('<script src="/js/jquery-ui.js"><\\/script>')
+      window.jQuery.ui || document.write('<script src="/assets/js/jquery-ui.js"><\\/script>')
     
     //Get socket.io
     

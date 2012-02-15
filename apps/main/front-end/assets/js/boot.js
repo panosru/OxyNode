@@ -87,10 +87,17 @@ function animate(selector, animation, settings_class) {
 }
 
 
+!function ($) {
+  $(function () {
+    // make code pretty
+    window.prettyPrint && prettyPrint()
+  })
+}(window.jQuery);
+
 $(document).ready(function () {
   //$(".nav").wijmenu();
 
-  $('#tabs').tabs();
+  $('#tabs').tabs().find( ".ui-tabs-nav" ).sortable({ axis: "x" });
 
   $('.dropdown-toggle').dropdown();
   $('select.chosen').chosen();
@@ -116,6 +123,8 @@ $(document).ready(function () {
       $nav.removeClass('subnav-fixed')
     }
   }
+  
+  //prettyPrint();
 
   /*
   $('#my-modal').modal({
@@ -125,8 +134,6 @@ $(document).ready(function () {
   $('#my-modal').modal({
     keyboard: true
   });
-
-  prettyPrint();
 
   $('table.tablesorter')
     .tablesorter()

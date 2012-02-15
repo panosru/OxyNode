@@ -33,7 +33,7 @@ i18n.init();
 
 //-Start Bundle
 Bundle.init({
-  bundle : true
+  bundle : false
 });
 
 System.configure({

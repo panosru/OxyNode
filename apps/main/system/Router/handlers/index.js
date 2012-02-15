@@ -1,2 +1,2 @@
 exports.api = require('./api');
-exports.app = require('./main');
+exports.home = require('./home');

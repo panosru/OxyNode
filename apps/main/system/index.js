@@ -126,7 +126,15 @@ exports.loadHelper = function (helper) {
  * =======================================
  */
 // Set System configuration
-exports.configure = function (configuration) {
+exports.configure = function (configuration, preConfigure, postConfigure) {
+  // Call pre configure event
+  if (
+        ('undefined' !== typeof preConfigure)
+    &&  ('function' === typeof preConfigure)
+  ) {
+    preConfigure();
+  }
+  
   // Get env's
   var envs = _.keys(configuration);
   
@@ -148,6 +156,14 @@ exports.configure = function (configuration) {
         });
     }
   });
+  
+  // Call post configure event
+  if (
+        ('undefined' !== typeof postConfigure)
+    &&  ('function' === typeof postConfigure)
+  ) {
+    postConfigure();
+  }
 }
 
 

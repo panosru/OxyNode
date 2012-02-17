@@ -1,9 +1,9 @@
 class Resources
   constructor : (@Server, @ErrorHandler) ->
-    # Load resources
-    @loadResources @getResources()
     
   init : ->
+    # Load resources
+    @loadResources @getResources()
     
   loadResources : (resources, parentInstance = null) ->
     # Iterate through resources

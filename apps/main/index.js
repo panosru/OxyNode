@@ -27,19 +27,9 @@ var
 
 
 // Bootstrap Application
-
-//-Start i18n
-i18n.init();
-
-//-Start Bundle
-Bundle.init({
-  bundle : false
-});
-
 System.configure({
   //-Development Env configuration
   development : function () {
-    
     return {
       use : [
           App.profiler()
@@ -64,6 +54,8 @@ System.configure({
   
   //-Global configuration
   global : function () {
+    //-Routes
+    Router.init();
     
     return {
       enable : [
@@ -85,26 +77,33 @@ System.configure({
         , i18n.getInstance().handle
         , App.csrf()
         , require($settings.paths.config + 'modul8')
+        //, Gzippo.staticGzip($settings.paths.public)
+        //, Gzippo.compress()
+        , App.static($settings.paths.config)
         , Server.router
-        , Gzippo.staticGzip($settings.paths.public)
-        , Gzippo.compress()
         , ErrorHandler.handle
       ]
     }
   }
+},function () { // Pre configure event
+  //-Start i18n
+  i18n.init();
+
+  //-Start Bundle
+  Bundle.init({
+    bundle : true
+  });
+}, function () { // Post configure event
+  //-Dynamic helpers
+  i18n.initHelpers();
+
+  Server.dynamicHelpers({
+    csrf_token : function(req, res) {
+      console.log (req.session);
+      return 'test'; //req.session._csrf;
+    }
+  });
 });
-
-//-Dynamic helpers
-i18n.initHelpers();
-
-Server.dynamicHelpers({
-  csrf_token : function(req, res) {
-    return 'test';//req.session._csrf;
-  }
-});
-
-//-Routes
-Router.init();
 
 //-App Listener
 Server.listen($settings.app.port);

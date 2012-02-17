@@ -36,10 +36,14 @@ class ErrorHandler
       next err
 
   # ====== Error Routes ======= #
-  initErrorRoutes : ->
-    _server = @Server
-    _.values(_privateScope).forEach (error) ->
-      error().route _server, error
+  initErrorRoutes : () ->
+    _.values(_privateScope).forEach (error) =>
+      error().route @Server, error
+      
+    # Garbage Collector
+    @Server.all '/*', (req, res, next) ->
+      # Throw 404 on everything that is not found
+      throw new _privateScope.NotFound()
     
 module.exports = (Server) ->
   new ErrorHandler(Server)

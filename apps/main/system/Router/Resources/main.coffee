@@ -20,7 +20,6 @@ class MainResource
   constructor : ->
   
   index : (req, res) ->
-    console.log req.session
     res.render 'home'
     
   test : (req, res) ->

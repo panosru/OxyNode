@@ -79,7 +79,7 @@ System.configure({
         , require($settings.paths.config + 'modul8')
         //, Gzippo.staticGzip($settings.paths.public)
         //, Gzippo.compress()
-        , App.static($settings.paths.config)
+        , App.static($settings.paths.public)
         , Server.router
         , ErrorHandler.handle
       ]

@@ -5,7 +5,7 @@ exports.common = {
       config            : path.normalize(__dirname + '/')    
     , system            : path.normalize(__dirname + '/../')
     , locales           : path.normalize(__dirname + '/../i18n/locales/') + '__lng__/__ns__.json'
-    , root              : path.normalize(__dirname + '/../../')
+    , root              : path.normalize(__dirname + '/../../../../')
     , helpers           : path.normalize(__dirname + '/../helpers/')
     , views             : path.normalize(__dirname + '/../views/')
     , routes            : path.normalize(__dirname + '/../Router/')

@@ -1,5 +1,5 @@
-# load plugins
-plugin = require './plugins'
+# load Utils
+plugin = require 'LIB::utils'
 #gravatar = require 'npm::gravatar'
 
 # load dependencies

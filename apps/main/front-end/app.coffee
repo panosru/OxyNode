@@ -1,9 +1,9 @@
 # load dependencies
 _           = require 'npm::underscore'
 Backbone    = require 'npm::backbone-browserify'
-Router      = require './router'
-Repository  = require './repository'
-Facade      = require './facade'
+Router      = require 'CONF::router'
+Repository  = require 'CONF::repository'
+Facade      = require 'LIB::facade'
 
 class Application
   constructor : (@repositories, @router) ->

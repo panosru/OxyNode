@@ -99,7 +99,7 @@ i18n.initHelpers();
 
 Server.dynamicHelpers({
   csrf_token : function(req, res) {
-    return req.session._csrf;
+    return 'test';//req.session._csrf;
   }
 });
 

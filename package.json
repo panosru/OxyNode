@@ -14,9 +14,37 @@
   "dependencies"  : {
     "coffee-script"       : "latest",
     "iced-coffee-script"  : "latest",
+    
+    "settings"            : "latest",
+    "JSON"                : "latest",
+    "uglify-js"           : "latest",
+    "colors"              : "latest",
+    "optimist"            : "latest",
+    "stylus"              : "latest",
+    "nib"                 : "latest",
+    
     "markdown"            : "latest",
     "jade"                : "latest",
-    "express"             : "latest"
+    "express"             : "latest",
+    "express-resource"    : "latest",
+    
+    "express-expose"      : "latest",
+    "express-chromeframe" : "latest",
+    "socket.io"           : "latest",
+    "backbone-browserify" : "latest",
+    "underscore"          : "latest",
+    "money"               : "latest",
+    "moment"              : "latest",
+    "gzippo"              : "latest",
+    "dice-roll"           : "latest",
+    "gravatar"            : "latest",
+    "i18next"             : "latest",
+    "gerenuk"             : "latest",
+    "modul8"              : "latest",
+    "bundle-up"           : "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "latest",
+    "should": "latest"
+  }
 } 

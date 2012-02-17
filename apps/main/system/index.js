@@ -1,10 +1,11 @@
 // Required Dependencies (Private scope)
 var
     // Modules
-    express  = require('express')
-  , jade        = require('jade')
-  , Settings = require('settings')
-  , _        = require('underscore')
+    express   = require('express')
+  , Resource  = require('express-resource')
+  , jade      = require('jade')
+  , Settings  = require('settings')
+  , _         = require('underscore')
     
     // Libraries
   , i18n          = require('./i18n')

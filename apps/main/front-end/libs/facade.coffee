@@ -1,5 +1,5 @@
 # Load Dependencies
-permissions = require './permissions'
+permissions = require 'CONF::permissions'
 mediator    = require './mediator'
 
 #=== Facade Pattern

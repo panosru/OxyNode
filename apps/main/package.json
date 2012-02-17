@@ -11,36 +11,8 @@
   "scripts" : {
     "start" : "NODE_ENV=development nodemon -d 0"
   },
-  "dependencies"  : {
-    "settings"            : "latest",
-    "JSON"                : "latest",
-    "uglify-js"           : "latest",
-    "colors"              : "latest",    
-    "stylus"              : "latest",
-    "modul8"              : "latest",
-    "express-resource"    : "latest",
-    "express-namespace"   : "latest",
-    "express-expose"      : "latest",
-    "socket.io"           : "latest",
-    "optimist"            : "latest",
-    "backbone-browserify" : "latest",
-    "underscore"          : "latest",
-    "bootstrap-stylus"    : "latest",
-    "money"               : "latest",
-    "moment"              : "latest",
-    "bundle-up"           : "latest",
-    "gzippo"              : "latest",
-    "dice-roll"           : "latest",
-    "nib"                 : "latest",
-    "gravatar"            : "latest",
-    "i18next"             : "latest",
-    "express-chromeframe" : "latest",
-    "gerenuk"             : "latest"
-  },
-  "devDependencies": {
-    "mocha": "latest",
-    "should": "latest"
-  },
+  "dependencies"  : {},
+  "devDependencies": {},
   "operations"  : {
     "fetch_scripts"  : [
       { "filename" : "jquery.js",     "path" : "public/js/",  "url" : "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" },

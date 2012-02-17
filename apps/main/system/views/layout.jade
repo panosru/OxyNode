@@ -61,11 +61,11 @@ html.no-js(lang='en')
           ul.nav.nav-list
             li.nav-header List header
             li.active: a(href='/')
-              i.icon-white.icon-home 
-              |  Home
-            li: a(href='#')
+              i.icon-white.icon-home
+              | Home
+            li: a(href='/test')
               i.icon-book
-              |  Library
+              |  Test
             li: a(href='#')
               i.icon-pencil
               |  Applications
@@ -114,7 +114,7 @@ html.no-js(lang='en')
       $.i18n.init({
           dynamicLoad: true
         , fallbackLng : 'en-US'
-        , resGetPath : 'locales/resources.json?lng=__lng__&ns=__ns__'
+        , resGetPath : '/locales/resources.json?lng=__lng__&ns=__ns__'
         , useLocalStorage: false // in production you could use this
       });
       

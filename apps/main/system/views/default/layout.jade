@@ -19,7 +19,7 @@ html.no-js(lang='en')
     != renderStyles()
     link(rel='dns-prefetch', href='//ajax.googleapis.com')
     link(rel='dns-prefetch', href='//cdn.wijmo.com')
-    //!Le fav and touch icons
+    //! fav and touch icons
     //link(rel='shortcut icon', href='/assets/ico/favicon.ico')
     link(rel='apple-touch-icon', href='/assets/ico/apple-touch-icon.png')
     link(rel='apple-touch-icon', sizes='72x72', href='/assets/ico/apple-touch-icon-72x72.png')
@@ -79,7 +79,8 @@ html.no-js(lang='en')
             li: a(href='#')
               i.icon-flag
               |  Help
-        .content!= body
+        .content
+          block content
     footer
       .container-fluid
         i Please if you think that any of the project's file violate any license please let me know if it does it's not on purpose and I will replace/remove or ask permission to use it.

@@ -1,11 +1,14 @@
 # Dependencies
-fs    = require 'fs'
-path  = require 'path'
-_     = require 'underscore'
+fs      = require 'fs'
+path    = require 'path'
+_       = require 'underscore'
 
 # Error Handler
 class ErrorHandler
-  constructor : (@Server) ->
+  _configure = null
+  
+  constructor : (@Server, Configure) ->
+    _configure = Configure
     loadErrors()
     
   # Private
@@ -24,6 +27,21 @@ class ErrorHandler
   
   
   # Public
+  
+  init : () ->
+    # Init error routes
+    @initErrorRoutes()
+    
+    _configure(
+      global : =>
+        use : [
+          # handle errors
+          @handle
+          # handle not found routes
+          @noMatchRoute
+        ]
+    )
+    
   
   #-Core Handler
   handle : (err, req, res, next) ->
@@ -44,5 +62,5 @@ class ErrorHandler
     _.values(_privateScope).forEach (error) =>
       error().route @Server, error
     
-module.exports = (Server) ->
-  new ErrorHandler(Server)
+module.exports = (Server, Configure) ->
+  new ErrorHandler(Server, Configure)

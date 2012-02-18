@@ -1,7 +1,7 @@
 // Setup module dependencies
 var
     // Modules
-    Gzippo      = require('gzippo')
+    Gzippo        = require('gzippo')
 
     // Load System
   , System        = require('./system')
@@ -18,11 +18,11 @@ var
     // Get Bundle
   , Bundle        = System.getBundle()
   
-    // Get Error Handler
-  , ErrorHandler  = System.getErrorHandlerInstance()
-  
     // Get Router
   , Router        = System.getRouterInstance()
+  
+    // Get Error Handler
+  , ErrorHandler  = System.getErrorHandlerInstance()
 ;
 
 
@@ -54,18 +54,16 @@ System.configure({
   
   //-Global configuration
   global : function () {
-    //-Routes
-    Router.init();
-    
     return {
       enable : [
           'case sensitive routes'
-        , 'strict routing'
+        //, 'strict routing'
       ],
       
       set : {
-          'views'       : $settings.paths.views
-        , 'view engine' : $settings.app.view.engine
+          'views'         : $settings.paths.views
+        , 'view engine'   : $settings.app.view.engine
+        , 'view options'  : { layout: false }
       },
       
       use : [
@@ -78,31 +76,42 @@ System.configure({
         , App.csrf()
         , require($settings.paths.config + 'modul8')
         , Gzippo.staticGzip($settings.paths.public)
-        , Gzippo.compress()
+        //, Gzippo.compress()
         , Server.router
-        , ErrorHandler.handle
-        , ErrorHandler.noMatchRoute
       ]
     }
+  },
+  
+  //=== Events
+  
+  // Pre configure event
+  _preConfigure : function () {
+    //-Start i18n
+    i18n.init();
+    
+    //-Start Bundle
+    Bundle.init({
+      bundle : true
+    });
+  },
+  
+  // Post configure event
+  _postConfigure : function () {
+    //-Routes
+    Router.init();
+    
+    //-Error Handler
+    ErrorHandler.init();
+    
+    //-Dynamic helpers
+    i18n.initHelpers();
+
+    Server.dynamicHelpers({
+      csrf_token : function(req, res) {
+        return req.session._csrf;
+      }
+    });
   }
-},function () { // Pre configure event
-  //-Start i18n
-  i18n.init();
-
-  //-Start Bundle
-  Bundle.init({
-    bundle : true
-  });
-}, function () { // Post configure event
-  //-Dynamic helpers
-  i18n.initHelpers();
-
-  Server.dynamicHelpers({
-    csrf_token : function(req, res) {
-      console.log (req.session);
-      return req.session._csrf;
-    }
-  });
 });
 
 //-App Listener

@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  .subnav
+    ul.nav.nav-pills
+      li.active: a(href='#/user/create') Create User
+      li: a(href='#code') Code
+      li: a(href='#tables') Tables
+      li: a(href='#forms') Forms
+      li: a(href='#buttons') Buttons
+      li.dropdown
+        a.dropdown-toggle(href='#icon', data-toggle='dropdown') Icons by Glyphicons
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href='#') Secondary link
+          li
+            a(href='#') Something else here
+          li.divider
+          li
+            a(href='#') Another link
+  
+  #tabs
+    ul.nav.nav-tabs
+      li: a(href='#home') Home
+  
+    #home
+      // Main hero unit for a primary marketing message or call to action 
+      .hero-unit
+        h1 Hello, world! 
+          =t('creator.firstname', { defaultValue : 'Δεν υπάρχει μετάφραση!' })
+        p Vestibulum id 
+          code ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+        p: a.btn.primary.large Learn more »
+      hr
+      //
+        div.hero-unit.bootstrap
+        form(method='post')
+          input(type='hidden', name='_csrf', value=csrf_token)
+          input(type='text', name='string')
+          input(type='submit', name='submit', value='submit')
+      #createAccount
+      hr
+      // Example row of columns 
+      .row
+        .span5
+          h2 Heading
+          p Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          p: a.btn(href='#') View details »
+        .span5
+          h2 Heading
+          p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          p: a.btn(href='#') View details »
+        .span5
+          h2 Heading
+          p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+          p: a.btn(href='#') View details »

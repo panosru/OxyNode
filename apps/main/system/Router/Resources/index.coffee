@@ -1,5 +1,5 @@
 class Resources
-  constructor : (@Server, @ErrorHandler) ->
+  constructor : (@Server) ->
     
   init : ->
     # Load resources
@@ -16,6 +16,7 @@ class Resources
 
   getResources : ->
     [
+      name : null
       path : 'main'
     ,
       name : 'best/api'
@@ -37,5 +38,5 @@ class Resources
     # Return resource
     _resourceInst
 
-module.exports = (Server, ErrorHandler) ->
-  new Resources Server, ErrorHandler
+module.exports = (Server) ->
+  new Resources Server

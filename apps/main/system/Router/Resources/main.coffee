@@ -22,10 +22,7 @@ class MainResource
   index : (req, res) ->
     res.render 'home'
     
-  test : (req, res) ->
-    res.render 'test'
-    
   setMappings : (inst) ->
-    #inst.map 'get', 'test', @test
+    #inst.map 'get', '/test', @test
 
 module.exports = new MainResource()

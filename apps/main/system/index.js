@@ -126,23 +126,21 @@ exports.loadHelper = function (helper) {
  * =======================================
  */
 // Set System configuration
-exports.configure = function (configuration, preConfigure, postConfigure) {
-  // Call pre configure event
-  if (
-        ('undefined' !== typeof preConfigure)
-    &&  ('function' === typeof preConfigure)
-  ) {
-    preConfigure();
-  }
-  
+exports.configure = function (configuration) {
   // Get env's
   var envs = _.keys(configuration);
   
   // Get server
   var server = getServerInstance();
   
+  // Call pre configure event
+  if (
+        ('undefined' !== typeof configuration._preConfigure)
+    &&  ('function' === typeof configuration._preConfigure)
+  ) configuration._preConfigure();
+  
   // Iterate through envs
-  envs.forEach(function (env) {
+  envs.forEach (function (env) {
     switch (env) {
       case 'global':
         server.configure(function () {
@@ -159,11 +157,9 @@ exports.configure = function (configuration, preConfigure, postConfigure) {
   
   // Call post configure event
   if (
-        ('undefined' !== typeof postConfigure)
-    &&  ('function' === typeof postConfigure)
-  ) {
-    postConfigure();
-  }
+        ('undefined' !== typeof configuration._postConfigure)
+    &&  ('function' === typeof configuration._postConfigure)
+  ) configuration._postConfigure();
 }
 
 
@@ -192,7 +188,7 @@ exports.getServerInstance = getServerInstance = function () {
 // Get Error Handler (Singleton)
 exports.getErrorHandlerInstance = getErrorHandlerInstance = function () {
   if (null === _error_handler) {
-    _error_handler = ErrorHandler(getServerInstance());
+    _error_handler = ErrorHandler(getServerInstance(), exports.configure);
   }
   return _error_handler;
 }
@@ -208,7 +204,7 @@ exports.getI18nInstance = getI18nInstance = function () {
 // Get Router (Singleton)
 exports.getRouterInstance = getRouterInstance = function () {
   if (null === _router) {
-    _router = Router(getServerInstance(), getErrorHandlerInstance());
+    _router = Router(getServerInstance());
   }
   return _router;
 }

@@ -15,7 +15,6 @@ class AccessDenied extends Error
           analyticssiteid: "XXXXXXX"
           error: err
         status: err.status
-        layout: false
   
       return
     # respond with json

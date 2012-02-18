@@ -14,7 +14,6 @@ class NotFound extends Error
           author: ""
           analyticssiteid: "XXXXXXX"
         status: 404
-        layout: false
   
       return
     # respond with json

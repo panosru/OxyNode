@@ -9,6 +9,9 @@ class Router
     
     # Error routes
     @ErrorHandler.initErrorRoutes()
+    
+    @Server.get '/omg', (req, res, next) ->
+      res.send 'Session ID: ' + req.session
 
 module.exports = (Server, ErrorHandler) ->
   new Router(Server, ErrorHandler)

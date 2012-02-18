@@ -77,11 +77,11 @@ System.configure({
         , i18n.getInstance().handle
         , App.csrf()
         , require($settings.paths.config + 'modul8')
-        //, Gzippo.staticGzip($settings.paths.public)
-        //, Gzippo.compress()
-        , App.static($settings.paths.public)
+        , Gzippo.staticGzip($settings.paths.public)
+        , Gzippo.compress()
         , Server.router
         , ErrorHandler.handle
+        , ErrorHandler.noMatchRoute
       ]
     }
   }
@@ -100,7 +100,7 @@ System.configure({
   Server.dynamicHelpers({
     csrf_token : function(req, res) {
       console.log (req.session);
-      return 'test'; //req.session._csrf;
+      return req.session._csrf;
     }
   });
 });
